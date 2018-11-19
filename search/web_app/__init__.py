@@ -16,7 +16,7 @@ from .response_processors import SentenceViewer
 from .transliteration import *
 
 
-SETTINGS_DIR = '../corpus/conlab_bashkir/conf'
+SETTINGS_DIR = '../conf'
 MAX_PAGE_SIZE = 100     # maximum number of sentences per page
 f = open(os.path.join(SETTINGS_DIR, 'corpus.json'), 'r', encoding='utf-8')
 settings = json.loads(f.read())
