@@ -36,10 +36,14 @@ class Indexator:
         self.iterSent = None
         if self.input_format in ['json', 'json-gzip']:
             self.iterSent = JSONDocReader(format=self.input_format)
-        self.goodWordFields = ['lex', 'wf', 'parts', 'gloss', 'gloss_index', 'n_ana', 'trans_en', 'trans_ru']
-        self.AdditionalWordFields = []
+        self.goodWordFields = ['lex', 'wf', 'wf_display',
+                               'parts', 'gloss', 'gloss_index', 'n_ana',
+                               'trans_en', 'trans_ru']
+        self.AdditionalWordFields = set()
         if 'word_fields' in self.settings:
-            self.AdditionalWordFields = self.settings['word_fields']
+            self.AdditionalWordFields |= set(self.settings['word_fields'])
+        if 'word_table_fields' in self.settings:
+            self.AdditionalWordFields |= set(self.settings['word_table_fields'])
         f = open(os.path.join(self.SETTINGS_DIR, 'categories.json'),
                  'r', encoding='utf-8')
         categories = json.loads(f.read())
@@ -134,10 +138,11 @@ class Indexator:
             wClean = {'lang': langID}
             lemma = ''
             for field in w:
-                if field in self.goodWordFields:
+                if field in self.goodWordFields or field in self.AdditionalWordFields:
                     wClean[field] = w[field]
                     if field == 'wf':
-                        wClean[field] = wClean[field].lower()
+                        if 'wf_lowercase' not in self.settings or self.settings['wf_lowercase']:
+                            wClean[field] = wClean[field].lower()
                         self.wfs.add(wClean[field])
             if 'ana' in w:
                 lemma = self.get_lemma(w)
@@ -146,7 +151,7 @@ class Indexator:
                 for ana in w['ana']:
                     cleanAna = {}
                     for anaField in ana:
-                        if anaField in self.goodWordFields:
+                        if anaField in self.goodWordFields or anaField in self.AdditionalWordFields:
                             cleanAna[anaField] = ana[anaField]
                     wClean['ana'].append(cleanAna)
             wCleanTxt = json.dumps(wClean, ensure_ascii=False, sort_keys=True)
@@ -252,11 +257,25 @@ class Indexator:
         """
         if 'ana' not in word:
             return ''
-        curLemmata = set()
+        if 'keep_lemma_order' not in self.settings or not self.settings['keep_lemma_order']:
+            curLemmata = set()
+            for ana in word['ana']:
+                if 'lex' in ana:
+                    if type(ana['lex']) == list:
+                        for l in ana['lex']:
+                            curLemmata.add(l.lower())
+                    else:
+                        curLemmata.add(ana['lex'].lower())
+            return '/'.join(l for l in sorted(curLemmata))
+        curLemmata = []
         for ana in word['ana']:
             if 'lex' in ana:
-                curLemmata.add(ana['lex'].lower())
-        return '/'.join(l for l in sorted(curLemmata))
+                if type(ana['lex']) == list:
+                    for l in ana['lex']:
+                        curLemmata.append(l.lower())
+                else:
+                    curLemmata.append(ana['lex'].lower())
+        return '/'.join(curLemmata)
 
     def iterate_lemmata(self, langID, lemmaFreqs, lemmaDIDs):
         """
@@ -267,8 +286,8 @@ class Indexator:
         freqToRank, quantiles = self.get_freq_ranks(lFreqsSorted)
         iLemma = 0
         for l, lID in self.tmpLemmaIDs[langID].items():
-            if iLemma % 250 == 0:
-                print('indexing lemma', iLemma)
+            #if iLemma % 250 == 0:
+             #   print('indexing lemma', iLemma)
             lemmaJson = {'wf': l,
                          'freq': lemmaFreqs[lID],
                          'rank_true': freqToRank[lemmaFreqs[lID]],
@@ -294,15 +313,15 @@ class Indexator:
 
         for langID in range(len(self.languages)):
             iWord = 0
-            print('Processing words in ' + self.languages[langID] + '...')
+            #print('Processing words in ' + self.languages[langID] + '...')
             lemmaFreqs = {}       # lemma ID -> its frequency
             lemmaDIDs = {}        # lemma ID -> its document IDs
             wFreqsSorted = [v for v in sorted(self.wordFreqs[langID].values(), reverse=True)]
             freqToRank, quantiles = self.get_freq_ranks(wFreqsSorted)
             # for wID in self.wordFreqs[langID]:
             for w, wID in self.tmpWordIDs[langID].items():
-                if iWord % 500 == 0:
-                    print('indexing word', iWord)
+                #if iWord % 500 == 0:
+                   # print('indexing word', iWord)
                 try:
                     lID = self.word2lemma[langID][wID]
                 except KeyError:
@@ -443,8 +462,8 @@ class Indexator:
                             paraIDs[langID][paraID].append(self.randomize_id(self.sID))
                         except KeyError:
                             paraIDs[langID][paraID] = [self.randomize_id(self.sID)]
-            if self.sID % 500 == 0:
-                print('Indexing sentence', self.sID, ',', self.totalNumWords, 'words so far.')
+            #if self.sID % 500 == 0:
+             #   print('Indexing sentence', self.sID, ',', self.totalNumWords, 'words so far.')
             self.numSents += 1
             self.numSentsLang[langID] += 1
             self.sID += 1
@@ -466,8 +485,8 @@ class Indexator:
         """
         Store the metadata of the source file.
         """
-        if self.dID % 100 == 0:
-            print('Indexing document', self.dID)
+        #if self.dID % 100 == 0:
+            #print('Indexing document', self.dID)
         meta = self.iterSent.get_metadata(fname)
         self.add_meta_keywords(meta)
         meta['n_words'] = self.numWords
@@ -486,7 +505,7 @@ class Indexator:
                           id=self.dID,
                           body=meta)
         except RequestError as err:
-            print('Metadata error: {0}'.format(err))
+            #print('Metadata error: {0}'.format(err))
             shortMeta = {}
             if 'filename' in meta:
                 shortMeta['filename'] = meta['filename']

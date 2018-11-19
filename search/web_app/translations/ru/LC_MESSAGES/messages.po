@@ -21,8 +21,8 @@ msgstr ""
 
 # ********  Please fill in the following strings:  ********
 
-msgid "corpus_title"
-msgstr "(ВВЕДИТЕ НАЗВАНИЕ КОРПУСА В messages.po)"
+msgid "conlab_bashkir_corpus"
+msgstr "Устный корпус башкирского языка дер. Рахметово и Баимово"
 
 # Language names for the dropdown menu in search panel (please add all missing languages that you have in the corpus):
 
@@ -34,6 +34,33 @@ msgstr "бесермянский"
 
 msgid "langname_komi"
 msgstr "коми"
+
+msgid "langname_komi_zyrian"
+msgstr "коми-зырянский"
+
+msgid "langname_komi_permyak"
+msgstr "коми-пермяцкий"
+
+msgid "langname_erzya"
+msgstr "эрзянский"
+
+msgid "langname_moksha"
+msgstr "мокшанский"
+
+msgid "langname_hill_mari"
+msgstr "горномарийский"
+
+msgid "langname_meadow_mari"
+msgstr "луговой марийский"
+
+msgid "langname_tatar"
+msgstr "татарский"
+
+msgid "langname_bashkir"
+msgstr "башкирский"
+
+msgid "langname_chuvash"
+msgstr "чувашский"
 
 msgid "langname_nganasan"
 msgstr "нганасанский"
@@ -158,6 +185,12 @@ msgstr "год: до"
 msgid "metafield_title"
 msgstr "заголовок"
 
+msgid "metafield_title_en"
+msgstr "заголовок (английский)"
+
+msgid "metafield_title_myv"
+msgstr "заголовок (эрзянский)"
+
 msgid "metafield_author"
 msgstr "автор"
 
@@ -188,6 +221,9 @@ msgstr "выпуск"
 msgid "metafield_birthyear"
 msgstr "год рождения"
 
+msgid "metafield_byear"
+msgstr "год рождения"
+
 msgid "metafield_birthplace"
 msgstr "место рождения"
 
@@ -200,8 +236,17 @@ msgstr "род занятий"
 msgid "metafield_liveplace"
 msgstr "место проживания"
 
+msgid "metafield_home_town"
+msgstr "место рождения"
+
+msgid "metafield_city"
+msgstr "город"
+
 msgid "metafield_place"
 msgstr "место"
+
+msgid "metafield_region"
+msgstr "регион"
 
 msgid "metafield_subject"
 msgstr "предмет"
@@ -241,6 +286,15 @@ msgstr "год рождения (пост)"
 
 msgid "metafield_post_type"
 msgstr "тип поста"
+
+msgid "metafield_account_type"
+msgstr "тип аккаунта"
+
+msgid "metafield_page"
+msgstr "страница"
+
+msgid "metafield_line"
+msgstr "строка"
 
 
 # Names of the metadata values you have in the corpus:
@@ -320,6 +374,14 @@ msgstr "перевод 2 (RU)"
 msgid "wordfield_trans_en2"
 msgstr "перевод 2 (EN)"
 
+msgid "wordfield_logogram"
+msgstr "логограмма"
+
+msgid "wordfield_transcription"
+msgstr "транскрипция"
+
+msgid "wordfield_segment"
+msgstr "сегмент"
 
 
 
@@ -542,6 +604,9 @@ msgstr "слово"
 
 msgid "word_th_lemma"
 msgstr "лемма"
+
+msgid "word_th_transcription"
+msgstr "транскр."
 
 #: templates/result_words.html:4
 msgid "word_th_frequency"

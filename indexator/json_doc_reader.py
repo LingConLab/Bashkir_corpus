@@ -76,6 +76,7 @@ class JSONDocReader:
         If the file is not too large, iterate through its
         sentences.
         """
+        print(fname)
         if os.stat(fname).st_size > self.filesize_limit > 0:
             return
         self.lastFileName = fname

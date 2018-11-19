@@ -1,5 +1,5 @@
 import json
-import re
+import html
 import os
 import math
 from flask import render_template
@@ -25,6 +25,13 @@ class SentenceViewer:
         f.close()
         self.name = self.settings['corpus_name']
         self.sentence_props = ['text']
+        self.dictionary_categories = {lang: set() for lang in self.settings['languages']}
+        for lang in self.settings['lang_props']:
+            if 'dictionary_categories' in self.settings['lang_props'][lang]:
+                self.dictionary_categories[lang] = set(self.settings['lang_props'][lang]['dictionary_categories'])
+        self.authorMeta = 'author'
+        if 'author_metafield' in self.settings:
+            self.authorMeta = self.settings['author_metafield']
         self.sc = search_client
         self.w1_labels = set(['w1'] + ['w1_' + str(i) for i in range(self.settings['max_words_in_sentence'])])
 
@@ -131,10 +138,11 @@ class SentenceViewer:
             simpleAnalyses, simpleMatchingAnalyses = self.simplify_ana(simpleAnalyses, simpleMatchingAnalyses)
         return simpleAnalyses, simpleMatchingAnalyses
 
-    def build_gr_ana_part(self, grValues, lang):
+    def build_gr_ana_part(self, grValues, lang, gramdic=False):
         """
         Build a string with gramtags ordered according to the settings
         for the language specified by lang.
+        gramdic == True iff dictionary values (such as gender) are processed. 
         """
         def key_comp(p):
             if p[0] not in self.settings['lang_props'][lang]['gr_fields_order']:
@@ -146,28 +154,52 @@ class SentenceViewer:
             if len(grAnaPart) > 0:
                 grAnaPart += ', '
             grAnaPart += fv[1]
-        return render_template('grammar_popup.html', grAnaPart=grAnaPart).strip()
+        if not gramdic:
+            return render_template('grammar_popup.html', grAnaPart=grAnaPart).strip()
+        return render_template('gramdic_popup.html', grAnaPart=grAnaPart).strip()
 
     def build_ana_div(self, ana, lang, translit=None):
         """
         Build the contents of a div with one particular analysis.
         """
-        ana4template = {'lex': '', 'pos': '', 'gr': '', 'other_fields': []}
+        ana4template = {'lex': '', 'pos': '', 'grdic': '', 'lex_fields': [], 'gr': '', 'other_fields': []}
         if 'lex' in ana:
             ana4template['lex'] = self.transliterate_baseline(ana['lex'], lang=lang, translit=translit)
         if 'gr.pos' in ana:
             ana4template['pos'] = ana['gr.pos']
-        grValues = []
+        grValues = []     # inflectional categories
+        grdicValues = []  # dictionary categories such as nominal gender
         for field in sorted(ana):
             if field not in ['lex', 'gr.pos'] and field not in self.invisibleAnaFields:
                 value = ana[field]
                 if type(value) == list:
                     value = ', '.join(value)
                 if field.startswith('gr.'):
-                    grValues.append((field[3:], value))
+                    if lang in self.dictionary_categories and field[3:] in self.dictionary_categories[lang]:
+                        grdicValues.append((field[3:], value))
+                    else:
+                        grValues.append((field[3:], value))
+                elif ('exclude_fields' in self.settings['lang_props'][lang]
+                      and field in self.settings['lang_props'][lang]['exclude_fields']):
+                    continue
+                elif ('lexical_fields' in self.settings['lang_props'][lang]
+                      and field in self.settings['lang_props'][lang]['lexical_fields']):
+                    # Lexical fields are displayed between the lemma+pos and the gr lines
+                    ana4template['lex_fields'].append({'key': field, 'value': value})
                 else:
+                    # Other fields are displayed below the gr line
                     ana4template['other_fields'].append({'key': field, 'value': value})
-        ana4template['gr'] = self.build_gr_ana_part(grValues, lang)
+        ana4template['grdic'] = self.build_gr_ana_part(grdicValues, lang, gramdic=True)
+        ana4template['gr'] = self.build_gr_ana_part(grValues, lang, gramdic=False)
+        if 'other_fields_order' in self.settings['lang_props'][lang]:
+            ana4template['lex_fields'].sort(key=lambda x: (self.settings['lang_props'][lang]['other_fields_order'].index(x['key']),
+                                                           x['key']))
+            ana4template['other_fields'].sort(key=lambda x: (self.settings['lang_props'][lang]['other_fields_order'].index(x['key']),
+                                                             x['key']))
+        else:
+            # Order analysis fields alphabetically
+            ana4template['lex_fields'].sort(key=lambda x: x['key'])
+            ana4template['other_fields'].sort(key=lambda x: x['key'])
         return render_template('analysis_div.html', ana=ana4template).strip()
 
     def build_ana_popup(self, word, lang, matchingAnalyses=None, translit=None):
@@ -177,8 +209,10 @@ class SentenceViewer:
         if matchingAnalyses is None:
             matchingAnalyses = []
         data4template = {'wf': '', 'analyses': []}
-        if 'wf' in word:
-            data4template['wf'] = self.transliterate_baseline(word['wf'], lang=lang, translit=translit)
+        if 'wf_display' in word:
+            data4template['wf_display'] = self.transliterate_baseline(word['wf_display'], lang=lang, translit=translit)
+        elif 'wf' in word:
+            data4template['wf'] = html.escape(self.transliterate_baseline(word['wf'], lang=lang, translit=translit))
         if 'ana' in word:
             simplifiedAnas, simpleMatchingAnalyses = self.simplify_ana(word['ana'], matchingAnalyses)
             for iAna in range(len(simplifiedAnas)):
@@ -209,7 +243,10 @@ class SentenceViewer:
         # result = result.replace('"', "&quot;").replace('<', '&lt;').replace('>', '&gt;')
         return result
 
-    def build_span(self, sentSrc, curWords, lang, matchWordOffsets, translit=None):
+    def build_span(self, sentSrc, curWords, curStyles, lang, matchWordOffsets, translit=None):
+        """
+        Build a string with a starting span for a word in the baseline.
+        """
         curClass = ''
         if any(wn.startswith('w') for wn in curWords):
             curClass += ' word '
@@ -236,6 +273,8 @@ class SentenceViewer:
         spanStart = '<span class="' + curClass + \
                     ' '.join(wn + highlightClass(wn)
                              for wn in curWords) + '" data-ana="' + dataAna + '">'
+        for style in curStyles:
+            spanStart += '<span class="' + style + '">'
         return spanStart
 
     def add_highlighted_offsets(self, offStarts, offEnds, text):
@@ -291,11 +330,11 @@ class SentenceViewer:
                 result += '"???" '
             else:
                 result += '<span class="ch_title">-</span>'
-        if 'author' in meta:
+        if self.authorMeta in meta:
             if format == 'csv':
-                result += '(' + meta['author'] + ') '
+                result += '(' + meta[self.authorMeta] + ') '
             else:
-                result += '<span class="ch_author">' + meta['author'] + '</span>'
+                result += '<span class="ch_author">' + meta[self.authorMeta] + '</span>'
         if 'issue' in meta and len(meta['issue']) > 0:
             if format == 'csv':
                 result += meta['issue'] + ' '
@@ -418,6 +457,32 @@ class SentenceViewer:
                 offEnds[offEnd] = {srcID}
         return offStarts, offEnds, fragmentInfo
 
+    def get_style_offsets(self, sSource):
+        """
+        Find spans of text that should be displayed in a non-default style,
+        e.g. in italics or in superscript.
+        Return two dicts, one with start offsets and the other with end offsets.
+        The keys are offsets and the values are the string class names that define the style.
+        """
+        offStarts, offEnds = {}, {}
+        if 'style_spans' not in sSource:
+            return offStarts, offEnds
+        for iSpan in range(len(sSource['style_spans'])):
+            try:
+                offStart, offEnd = sSource['style_spans'][iSpan]['off_start'], sSource['style_spans'][iSpan]['off_end']
+            except KeyError:
+                continue
+            className = 'style_' + sSource['style_spans'][iSpan]['span_class']
+            try:
+                offStarts[offStart].add(className)
+            except KeyError:
+                offStarts[offStart] = {className}
+            try:
+                offEnds[offEnd].add(className)
+            except KeyError:
+                offEnds[offEnd] = {className}
+        return offStarts, offEnds
+
     def relativize_src_alignment(self, expandedContext, srcFiles):
         """
         If the sentences in the expanded context are aligned with the
@@ -506,19 +571,21 @@ class SentenceViewer:
             metaSpan += '</span>'
         return metaSpan
 
-    def process_sentence(self, s, numSent=1, getHeader=False, lang='', translit=None, format='html'):
+    def process_sentence(self, s, numSent=1, getHeader=False, lang='', langView='', translit=None, format='html'):
         """
         Process one sentence taken from response['hits']['hits'].
         If getHeader is True, retrieve the metadata from the database.
         Return dictionary {'header': document header HTML,
                            {'languages': {'<language_name>': {'text': sentence HTML}}}}.
         """
+        if len(langView) <= 0 and len(lang) > 0:
+            langView = lang
         if '_source' not in s:
-            return {'languages': {lang: {'text': '', 'highlighted_text': ''}}}
+            return {'languages': {langView: {'text': '', 'highlighted_text': ''}}}
         matchWordOffsets = self.retrieve_highlighted_words(s, numSent)
         sSource = s['_source']
         if 'text' not in sSource or len(sSource['text']) <= 0:
-            return {'languages': {lang: {'text': '', 'highlighted_text': ''}}}
+            return {'languages': {langView: {'text': '', 'highlighted_text': ''}}}
 
         header = {}
         if getHeader:
@@ -533,21 +600,24 @@ class SentenceViewer:
         else:
             highlightedText = sSource['text']
         if 'words' not in sSource:
-            return {'languages': {lang: {'text': highlightedText,
-                                         'highlighted_text': highlightedText}}}
+            return {'languages': {langView: {'text': highlightedText,
+                                             'highlighted_text': highlightedText}}}
         chars = list(sSource['text'])
         if format == 'csv':
             offParaStarts, offParaEnds = {}, {}
             offSrcStarts, offSrcEnds, fragmentInfo = {}, {}, {}
+            offStyleStarts, offStyleEnds = {}, {}
             offStarts, offEnds = self.get_word_offsets(sSource, numSent,
                                                        matchOffsets=matchWordOffsets)
         else:
             offParaStarts, offParaEnds = self.get_para_offsets(sSource)
             offSrcStarts, offSrcEnds, fragmentInfo = self.get_src_offsets(sSource)
+            offStyleStarts, offStyleEnds = self.get_style_offsets(sSource)
             offStarts, offEnds = self.get_word_offsets(sSource, numSent)
             self.add_highlighted_offsets(offStarts, offEnds, highlightedText)
 
         curWords = set()
+        curStyles = set()
         for i in range(len(chars)):
             if chars[i] == '\n':
                 if format == 'csv':
@@ -562,18 +632,39 @@ class SentenceViewer:
                 chars[i] = '&lt;'
             elif chars[i] == '>' and format != 'csv':
                 chars[i] = '&gt;'
+
+            # Add style tags (italics, superscript, etc.)
+            styleSpanEndAddition = ''
+            if len(curStyles) > 0 and i in offStyleEnds:
+                styleSpanEndAddition = '</span>' * len(offStyleEnds[i])
+                curStyles -= offStyleEnds[i]
+            if i in offStyleStarts:
+                nonUsedStyles = []
+                for style in offStyleStarts[i]:
+                    if style not in curStyles:
+                        nonUsedStyles.append(style)
+                        curStyles.add(style)
             if (i not in offStarts and i not in offEnds
                     and i not in offParaStarts and i not in offParaEnds
                     and i not in offSrcStarts and i not in offSrcEnds):
+                if i in offStyleStarts:
+                    for style in nonUsedStyles:
+                        chars[i] = '<span class="' + style + '">' + chars[i]
+                chars[i] = styleSpanEndAddition + chars[i]
                 continue
+
+            # Add word and alignment tags
             addition = ''
             if len(curWords) > 0:
                 if format == 'csv':
                     addition = '}}'
                 else:
                     addition = '</span>'
+                    addition += '</span>' * len(curStyles)
                 if i in offEnds:
                     curWords -= offEnds[i]
+                if i in offStyleEnds:
+                    curWords -= offStyleEnds[i]
                 if i in offParaEnds:
                     curWords -= offParaEnds[i]
                 if i in offSrcEnds:
@@ -592,8 +683,8 @@ class SentenceViewer:
                 if format == 'csv':
                     addition = '{{'
                 else:
-                    addition += self.build_span(sSource, curWords, lang, matchWordOffsets, translit=translit)
-            chars[i] = addition + chars[i]
+                    addition += self.build_span(sSource, curWords, curStyles, lang, matchWordOffsets, translit=translit)
+            chars[i] = styleSpanEndAddition + addition + chars[i]
         if len(curWords) > 0:
             if format == 'csv':
                 chars[-1] += '}}'
@@ -604,8 +695,8 @@ class SentenceViewer:
             relationsSatisfied = False
         text = self.view_sentence_meta(sSource, format) +\
                self.transliterate_baseline(''.join(chars), lang=lang, translit=translit)
-        return {'header': header, 'languages': {lang: {'text': text,
-                                                       'highlighted_text': highlightedText}},
+        return {'header': header, 'languages': {langView: {'text': text,
+                                                           'highlighted_text': highlightedText}},
                 'toggled_on': relationsSatisfied,
                 'src_alignment': fragmentInfo}
 
@@ -644,24 +735,36 @@ class SentenceViewer:
         freq = str(wSource['freq'])
         rank = str(wSource['rank'])
         nDocs = str(wSource['n_docs'])
+        otherFields = []
         if searchType == 'word':
             nSents = str(wSource['n_sents'])
             wf = self.transliterate_baseline(wSource['wf'], lang=lang, translit=translit)
+            wfDisplay = ''
+            if 'wf_display' in wSource:
+                wfDisplay = self.transliterate_baseline(wSource['wf_display'], lang=lang, translit=translit)
             lemma = self.get_lemma(wSource)
+            otherFields = self.get_word_table_fields(wSource)
         else:
             nSents = 0
-            wf = ''
+            wf = wfDisplay = ''
+            otherFields = []
             lemma = self.transliterate_baseline(wSource['wf'], lang=lang, translit=translit)
         wID = -1
         if 'w_id' in w:
             wID = w['w_id']
         else:
             wID = w['_id']
+        displayFreqRank = True
+        if 'display_freq_rank' in self.settings and not self.settings['display_freq_rank']:
+            displayFreqRank = False
         return render_template('word_table_row.html',
                                ana_popup=self.build_ana_popup(wSource, lang, translit=translit).replace('"', "&quot;").replace('<', '&lt;').replace('>', '&gt;'),
                                wf=wf,
+                               wf_display=wfDisplay,
                                lemma=lemma,
+                               other_fields=otherFields,
                                freq=freq,
+                               display_freq_rank=displayFreqRank,
                                rank=rank,
                                nSents=nSents,
                                nDocs=nDocs,
@@ -763,19 +866,63 @@ class SentenceViewer:
             hitsProcessed['n_sentences'] += 1
             hitsProcessed['doc_ids'].add(hit['_source']['doc_id'])
 
-    @staticmethod
-    def get_lemma(word):
+    def get_lemma(self, word):
         """
         Join all lemmata in the JSON representation of a word with
         an analysis and return them as a string.
         """
         if 'ana' not in word:
             return ''
-        curLemmata = set()
+        if 'keep_lemma_order' not in self.settings or not self.settings['keep_lemma_order']:
+            curLemmata = set()
+            for ana in word['ana']:
+                if 'lex' in ana:
+                    if type(ana['lex']) == list:
+                        for l in ana['lex']:
+                            curLemmata.add(l.lower())
+                    else:
+                        curLemmata.add(ana['lex'].lower())
+            return '/'.join(l for l in sorted(curLemmata))
+        curLemmata = []
         for ana in word['ana']:
             if 'lex' in ana:
-                curLemmata.add(ana['lex'])
-        return '/'.join(l for l in sorted(curLemmata))
+                if type(ana['lex']) == list:
+                    for l in ana['lex']:
+                        curLemmata.append(l.lower())
+                else:
+                    curLemmata.append(ana['lex'].lower())
+        return '/'.join(curLemmata)
+
+    def get_word_table_fields(self, word):
+        """
+        Return a list with values of fields that have to be displayed
+        in a word search hits table, along with wordform and lemma.
+        """
+        if 'word_table_fields' not in self.settings:
+            return []
+        wordTableValues = []
+        for field in self.settings['word_table_fields']:
+            if field in ['lex', 'wf']:
+                continue
+            curValues = set()
+            for k, v in word.items():
+                if k == field:
+                    if type(v) == list:
+                        for value in v:
+                            curValues.add(value)
+                    elif type(v) == str:
+                        curValues.add(v)
+            if 'ana' in word:
+                for ana in word['ana']:
+                    for k, v in ana.items():
+                        if k == field:
+                            if type(v) == list:
+                                for value in v:
+                                    curValues.add(value)
+                            elif type(v) == str:
+                                curValues.add(v)
+            wordTableValues.append('/'.join(v for v in sorted(curValues)))
+        return wordTableValues
 
     def process_words_collected_from_sentences(self, hitsProcessed, sortOrder='freq', pageSize=10):
         """
@@ -931,6 +1078,8 @@ class SentenceViewer:
         result['message'] = ''
         result['n_sentences'] = response['hits']['total']
         result['contexts'] = []
+        result['languages'] = []
+        resultLanguages = set()
         srcAlignmentInfo = {}
         if 'aggregations' in response:
             if 'agg_ndocs' in response['aggregations']:
@@ -939,16 +1088,23 @@ class SentenceViewer:
                 result['n_occurrences'] = int(math.floor(response['aggregations']['agg_nwords']['sum']))
         for iHit in range(len(response['hits']['hits'])):
             langID, lang = self.get_lang_from_hit(response['hits']['hits'][iHit])
+            langView = lang
+            if ('_source' in response['hits']['hits'][iHit]
+                    and 'transVar' in response['hits']['hits'][iHit]['_source']):
+                langView += '_' + str(response['hits']['hits'][iHit]['_source']['transVar'])
+            resultLanguages.add(langView)
             curContext = self.process_sentence(response['hits']['hits'][iHit],
                                                numSent=iHit,
                                                getHeader=True,
                                                lang=lang,
+                                               langView=langView,
                                                translit=translit)
             if 'src_alignment' in curContext:
                 srcAlignmentInfo.update(curContext['src_alignment'])
             result['contexts'].append(curContext)
         if len(srcAlignmentInfo) > 0:
             result['src_alignment'] = json.dumps(srcAlignmentInfo)
+        result['languages'] += [l for l in sorted(resultLanguages)]
         return result
 
     def process_word_json(self, response, docIDs, searchType='word', translit=None):

@@ -8,7 +8,7 @@ class PrepareData:
     Contains functions called when preparing the data
     for indexing in the database.
     """
-    SETTINGS_DIR = '../conf'
+    SETTINGS_DIR = '../corpus/conlab_bashkir/conf'
     rxBadField = re.compile('[^a-zA-Z0-9_]|^(?:lex|gr|gloss_index|wf|[wm]type|ana|sent_ids|id)$')
 
     def __init__(self):
@@ -23,13 +23,19 @@ class PrepareData:
                  'r', encoding='utf-8')
         self.categories = json.loads(f.read())
         f.close()
+        wfAnalyzerPatter = '[.\n()\\[\\]/]'
+        if 'wf_analyzer_pattern' in self.settings:
+            wfAnalyzerPatter = self.settings['wf_analyzer_pattern']
+        wfLowercase = True
+        if 'wf_lowercase' in self.settings:
+            wfLowercase = self.settings['wf_lowercase']
         self.wfAnalyzer = {
             'analysis': {
                 'analyzer': {
                     'wf_analyzer': {
                         'type': 'pattern',
-                        'pattern': '[.\n()\\[\\]/]',
-                        'lowercase': True
+                        'pattern': wfAnalyzerPatter,
+                        'lowercase': wfLowercase
                     },
                     'gloss_analyzer': {
                         'type': 'pattern',
@@ -64,13 +70,16 @@ class PrepareData:
         m = {'wf': {'type': 'text',
                     'fielddata': True,
                     'analyzer': 'wf_analyzer'},
+             'wf_display': {'type': 'text', 'index': False},
              'wtype': {'type': 'keyword'},
              'lang': {'type': 'byte'},
              'sentence_index': {'type': 'short'},
              'sids': {'type': 'integer', 'index': False},
              'n_ana': {'type': 'byte'},
              'ana': {'type': 'nested',
-                     'properties': {'lex': {'type': 'text'},
+                     'properties': {'lex': {'type': 'text',
+                                            'fielddata': True,
+                                            'analyzer': 'wf_analyzer'},
                                     'gloss_index': {'type': 'text',
                                                     'analyzer': 'gloss_analyzer'}}},
              'freq': {'type': 'integer'},
@@ -195,6 +204,15 @@ class PrepareData:
                                     'sent_ids': {'type': 'integer',
                                                  'index': False}
                                 }},
+             'style_spans': {'type': 'nested',
+                             'properties': {
+                                 'off_start': {'type': 'short',
+                                               'index': False},
+                                 'off_end': {'type': 'short',
+                                             'index': False},
+                                 'span_class': {'type': 'keyword',
+                                                'index': False}
+                             }},
              'segment_ids': {'type': 'integer',
                              'index': False},
              'words': {'type': 'nested',

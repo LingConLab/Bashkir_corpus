@@ -14,4 +14,4 @@ def get_locale():
 
 
 if __name__ == "__main__":
-    application.run(port=7342, host='0.0.0.0', debug=True)
+    application.run(port=8001, host='0.0.0.0', debug=True)
