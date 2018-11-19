@@ -21,7 +21,7 @@ msgstr ""
 
 # ********  Please fill in the following strings:  ********
 
-msgid "conlab_bashkir_corpus"
+msgid "corpus_title"
 msgstr "Устный корпус башкирского языка дер. Рахметово и Баимово"
 
 # Language names for the dropdown menu in search panel (please add all missing languages that you have in the corpus):

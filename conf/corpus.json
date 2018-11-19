@@ -1,7 +1,7 @@
 {
   "corpus_name": "conlab_bashkir",
   "input_format": "json",
-  "debug": true,
+  "debug": false,
   "media": true,
   "media_length": 60,
   "max_context_expand": 6,
@@ -51,9 +51,10 @@
   },
   "word_fields":
   [
+    "trans_en",
     "trans_ru"
   ],
-  "languages": ["bashkir", "russian"],
+  "languages": ["bashkir", "russian", "english"],
   "transliterations": ["original", "cyrillic"],
   "interface_languages": {"en": "English", "ru": "Russian"},
   "all_language_search_enabled": true,
@@ -142,17 +143,17 @@
         "columns": [
           [
             {"type": "header", "value": "Parts of speech"},
-            {"type": "gramm", "value": "N", "category": "pos", "tooltip": "Noun"},
-            {"type": "gramm", "value": "V", "category": "pos", "tooltip": "Verb"},
-            {"type": "gramm", "value": "ADJ", "category": "pos", "tooltip": "Adjective"},
-            {"type": "gramm", "value": "ADV", "category": "pos", "tooltip": "Adverb"},
-            {"type": "gramm", "value": "NUM", "category": "pos", "tooltip": "Numeral"},
-            {"type": "gramm", "value": "PRO", "category": "pos", "tooltip": "Pronoun"},
-            {"type": "gramm", "value": "POST", "category": "pos", "tooltip": "Postposition"},
-            {"type": "gramm", "value": "CNJ", "category": "pos", "tooltip": "Conjunction"},
-            {"type": "gramm", "value": "PART", "category": "pos", "tooltip": "Particle"},
-            {"type": "gramm", "value": "INTRJ", "category": "pos", "tooltip": "Interjection"},
-            {"type": "gramm", "value": "WORD", "category": "pos", "tooltip": "Not classified words"}
+            {"type": "gramm", "value": "n", "category": "pos", "tooltip": "Noun"},
+            {"type": "gramm", "value": "v", "category": "pos", "tooltip": "Verb"},
+            {"type": "gramm", "value": "adj", "category": "pos", "tooltip": "Adjective"},
+            {"type": "gramm", "value": "adv", "category": "pos", "tooltip": "Adverb"},
+            {"type": "gramm", "value": "num", "category": "pos", "tooltip": "Numeral"},
+            {"type": "gramm", "value": "pro", "category": "pos", "tooltip": "Pronoun"},
+            {"type": "gramm", "value": "post", "category": "pos", "tooltip": "Postposition"},
+            {"type": "gramm", "value": "cnj", "category": "pos", "tooltip": "Conjunction"},
+            {"type": "gramm", "value": "part", "category": "pos", "tooltip": "Particle"},
+            {"type": "gramm", "value": "intrj", "category": "pos", "tooltip": "Interjection"},
+            {"type": "gramm", "value": "word", "category": "pos", "tooltip": "Not classified words"}
           ],
           [
             {"type": "header", "value": "Number"},
@@ -195,7 +196,9 @@
             {"type": "gramm", "value": "hort", "category": "mood", "tooltip": "Hortative"},
             {"type": "gramm", "value": "juss", "category": "mood", "tooltip": "Jussive"},
             {"type": "gramm", "value": "imp", "category": "mood", "tooltip": "Imperative"},
-            {"type": "gramm", "value": "imp.emph", "category": "mood", "tooltip": "Emphatic imperative"},
+            {"type": "gramm", "value": "imp.emph", "category": "mood", "tooltip": "Emphatic imperative"}
+          ],
+          [
             {"type": "header", "value": "Verbal derivation"},
             {"type": "gramm", "value": "caus", "category": "tense", "tooltip": "Causative"},
             {"type": "gramm", "value": "pass", "category": "tense", "tooltip": "Passive"},

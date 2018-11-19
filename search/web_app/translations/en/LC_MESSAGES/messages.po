@@ -20,7 +20,7 @@ msgstr ""
 
 # ********  Please fill in the following strings:  ********
 
-msgid "conlab_bashkir_corpus"
+msgid "corpus_title"
 msgstr "Oral corpus of Bashkir spoken in Rakhmetovo and Baimovo"
 
 # Language names for the dropdown menu in search panel (please add all missing languages that you have in the corpus):

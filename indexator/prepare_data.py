@@ -8,7 +8,7 @@ class PrepareData:
     Contains functions called when preparing the data
     for indexing in the database.
     """
-    SETTINGS_DIR = '../corpus/conlab_bashkir/conf'
+    SETTINGS_DIR = '../conf'
     rxBadField = re.compile('[^a-zA-Z0-9_]|^(?:lex|gr|gloss_index|wf|[wm]type|ana|sent_ids|id)$')
 
     def __init__(self):
