@@ -1,0 +1,7 @@
+eaf/
+eaf_to_process/
+search/media/
+corpus/
+*.pyc
+search/tmp/
+stem_to_trans.py
