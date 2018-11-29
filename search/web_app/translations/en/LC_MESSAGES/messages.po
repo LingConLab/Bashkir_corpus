@@ -21,7 +21,7 @@ msgstr ""
 # ********  Please fill in the following strings:  ********
 
 msgid "corpus_title"
-msgstr "Oral corpus of Bashkir spoken in Rakhmetovo and Baimovo"
+msgstr "(INSERT CORPUS TITLE IN messages.po)"
 
 # Language names for the dropdown menu in search panel (please add all missing languages that you have in the corpus):
 
@@ -50,7 +50,7 @@ msgid "langname_hill_mari"
 msgstr "Hill Mari"
 
 msgid "langname_meadow_mari"
-msgstr "Meadwo Mari"
+msgstr "Meadow Mari"
 
 msgid "langname_tatar"
 msgstr "Tatar"
@@ -115,6 +115,48 @@ msgstr "German"
 msgid "langname_french"
 msgstr "French"
 
+msgid "langname_armenian"
+msgstr "Armenian"
+
+msgid "langname_armenian_translit"
+msgstr "Armenian (translit.)"
+
+msgid "langname_belarusian"
+msgstr "Belarusian"
+
+msgid "langname_ukrainian"
+msgstr "Ukrainian"
+
+msgid "langname_latvian"
+msgstr "Latvian"
+
+msgid "langname_lithuanian"
+msgstr "Lithuanian"
+
+msgid "langname_estonian"
+msgstr "Estonian"
+
+msgid "langname_finnish"
+msgstr "Finnish"
+
+msgid "langname_italian"
+msgstr "Italian"
+
+msgid "langname_spanish"
+msgstr "Spanish"
+
+msgid "langname_bulgarian"
+msgstr "Bulgarian"
+
+msgid "langname_swedish"
+msgstr "Swedish"
+
+msgid "langname_polish"
+msgstr "Polish"
+
+msgid "langname_chinese"
+msgstr "Chinese"
+
 msgid "langname_comments"
 msgstr "comments"
 
@@ -157,7 +199,7 @@ msgstr "dictionary"
 
 
 
-# Names of inpiut methods that define how string queries (for word, lemma etc.) will be transformed before the query is performed:
+# Names of input methods that define how string queries (for word, lemma etc.) will be transformed before the query is performed:
 
 msgid "inputmethod_normal"
 msgstr "normal"
@@ -180,6 +222,12 @@ msgstr "year: from"
 
 msgid "metafield_year_to"
 msgstr "year: to"
+
+msgid "metafield_year_birth"
+msgstr "year of birth"
+
+msgid "metafield_year_publ"
+msgstr "publication year"
 
 msgid "metafield_title"
 msgstr "title"
@@ -294,6 +342,43 @@ msgstr "Page"
 
 msgid "metafield_line"
 msgstr "Line"
+
+msgid "metafield_type"
+msgstr "Type"
+
+msgid "metafield_sphere"
+msgstr "Sphere"
+
+msgid "metafield_chronotop"
+msgstr "Chronotope"
+
+msgid "metafield_genre_fi"
+msgstr "Genre of fiction"
+
+msgid "metafield_publication"
+msgstr "Publication"
+
+msgid "metafield_medium"
+msgstr "Medium"
+
+msgid "metafield_country"
+msgstr "Country"
+
+msgid "metafield_tagging"
+msgstr "Tagging"
+
+msgid "metafield_translator"
+msgstr "Translator"
+
+msgid "metafield_lang"
+msgstr "Original language"
+
+msgid "metafield_lang_trans"
+msgstr "Language of translation"
+
+msgid "metafield_date_trans"
+msgstr "Date of translation"
+
 
 
 # Names of the metadata values you have in the corpus:
@@ -416,13 +501,28 @@ msgstr "Word:"
 msgid "Lemma:"
 msgstr "Lemma:"
 
+msgid "Lemma"
+msgstr "Lemma"
+
 #: templates/index.html:54
 msgid "Grammar:"
 msgstr "Grammar:"
 
+msgid "Grammar"
+msgstr "Grammar"
+
 #: templates/index.html:56
 msgid "Gloss:"
 msgstr "Gloss:"
+
+msgid "Gloss"
+msgstr "Gloss"
+
+msgid "Additional fields"
+msgstr "Additional fields"
+
+msgid "Annotation layers in glossed mode:"
+msgstr "Annotation layers in glossed mode:"
 
 #: templates/index.html:61
 msgid "Language:"

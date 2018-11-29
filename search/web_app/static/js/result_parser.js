@@ -30,6 +30,7 @@ function hide_player() {
 function assign_word_events() {
 	$("span.word").unbind('click');
 	$("span.expand").unbind('click');
+	$("span.get_glossed_copy").unbind('click');
 	$("span.context_header").unbind('click');
 	$("span.search_w").unbind('click');
 	$("span.stat_w").unbind('click');
@@ -37,6 +38,7 @@ function assign_word_events() {
 	$(".cx_toggle_chk").unbind('change');
 	$('span.word').click(highlight_cur_word);
 	$('span.expand').click(expand_context);
+	$('span.get_glossed_copy').click(copy_glossed_sentence);
 	$('span.context_header').click(show_doc_meta);
 	$('span.search_w').click(search_word_from_list);
 	$('span.stat_w').click(show_word_stats);
@@ -57,6 +59,19 @@ function highlight_cur_word(e) {
 function expand_context(e) {
 	var n_sent = $(e.currentTarget).attr('data-nsent');
 	load_expanded_context(n_sent);
+}
+
+function copy_glossed_sentence(e) {
+	var n_sent = $(e.currentTarget).attr('data-nsent');
+	var hiddenTextArea = document.createElement("textarea");
+	hiddenTextArea.id = "glossed_copy_textarea";
+	hiddenTextArea.style.boxShadow = 'none';
+	document.body.appendChild(hiddenTextArea);
+	load_glossed_sentence(n_sent);
+	$('#glossed_copy_textarea').focus();
+	$('#glossed_copy_textarea').select();
+	var successful = document.execCommand('copy');
+	document.body.removeChild(hiddenTextArea);
 }
 
 function context_toggle(e) {
@@ -351,6 +366,7 @@ function toggle_interlinear() {
 			if ($(this).find('.ana_interlinear').length > 0) {
 				return;
 			}
+			$(this).css("display", "inline-table");
 			var data_ana = $(this).attr('data-ana');
 			if (data_ana == null || data_ana.length <= 0) {
 				return;
@@ -366,6 +382,10 @@ function toggle_interlinear() {
 		});
 	}
 	else {
+		$('span.word, span.word_in_table').each(function (index) {
+			$(this).css("display", "inline-block");
+			$(this).html($(this).html().replace(/<br>/, ''));
+		});
 		$('.ana_interlinear').remove();
 	}
 }

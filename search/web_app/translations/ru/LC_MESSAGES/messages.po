@@ -22,7 +22,7 @@ msgstr ""
 # ********  Please fill in the following strings:  ********
 
 msgid "corpus_title"
-msgstr "Устный корпус башкирского языка дер. Рахметово и Баимово"
+msgstr "(ВВЕДИТЕ НАЗВАНИЕ КОРПУСА В messages.po)"
 
 # Language names for the dropdown menu in search panel (please add all missing languages that you have in the corpus):
 
@@ -116,6 +116,48 @@ msgstr "немецкий"
 msgid "langname_french"
 msgstr "французский"
 
+msgid "langname_armenian"
+msgstr "армянский"
+
+msgid "langname_armenian_translit"
+msgstr "армянский (транслит.)"
+
+msgid "langname_belarusian"
+msgstr "белорусский"
+
+msgid "langname_ukrainian"
+msgstr "украинский"
+
+msgid "langname_latvian"
+msgstr "латышский"
+
+msgid "langname_lithuanian"
+msgstr "литовский"
+
+msgid "langname_estonian"
+msgstr "эстонский"
+
+msgid "langname_finnish"
+msgstr "финский"
+
+msgid "langname_italian"
+msgstr "итальянский"
+
+msgid "langname_spanish"
+msgstr "испанский"
+
+msgid "langname_bulgarian"
+msgstr "болгарский"
+
+msgid "langname_swedish"
+msgstr "шведский"
+
+msgid "langname_polish"
+msgstr "польский"
+
+msgid "langname_chinese"
+msgstr "китайский"
+
 msgid "langname_comments"
 msgstr "комментарии"
 
@@ -181,6 +223,12 @@ msgstr "год: от"
 
 msgid "metafield_year_to"
 msgstr "год: до"
+
+msgid "metafield_year_birth"
+msgstr "год рождения автора"
+
+msgid "metafield_year_publ"
+msgstr "год публикации"
 
 msgid "metafield_title"
 msgstr "заголовок"
@@ -295,6 +343,42 @@ msgstr "страница"
 
 msgid "metafield_line"
 msgstr "строка"
+
+msgid "metafield_type"
+msgstr "тип"
+
+msgid "metafield_sphere"
+msgstr "сфера функционирования"
+
+msgid "metafield_chronotop"
+msgstr "время и место действия"
+
+msgid "metafield_genre_fi"
+msgstr "жанр худ. литературы"
+
+msgid "metafield_publication"
+msgstr "издание"
+
+msgid "metafield_medium"
+msgstr "тип носителя"
+
+msgid "metafield_country"
+msgstr "страна"
+
+msgid "metafield_tagging"
+msgstr "разметка"
+
+msgid "metafield_translator"
+msgstr "переводчик"
+
+msgid "metafield_lang"
+msgstr "язык оригинала"
+
+msgid "metafield_lang_trans"
+msgstr "язык перевода"
+
+msgid "metafield_date_trans"
+msgstr "дата перевода"
 
 
 # Names of the metadata values you have in the corpus:
@@ -418,13 +502,28 @@ msgstr "Слово:"
 msgid "Lemma:"
 msgstr "Лемма:"
 
+msgid "Lemma"
+msgstr "Лемма"
+
 #: templates/index.html:54
 msgid "Grammar:"
 msgstr "Грамматика:"
 
+msgid "Grammar"
+msgstr "Грамматика"
+
 #: templates/index.html:56
 msgid "Gloss:"
 msgstr "Глоссы:"
+
+msgid "Gloss"
+msgstr "Глоссы"
+
+msgid "Additional fields"
+msgstr "Дополнительные поля"
+
+msgid "Annotation layers in glossed mode:"
+msgstr "Слои разметки в глоссированной выдаче:"
 
 #: templates/index.html:61
 msgid "Language:"

@@ -7,6 +7,7 @@
   "max_context_expand": 6,
   "max_distance_filter": 200000,
   "max_docs_retrieve": 9999,
+  "integer_meta_fields": ["year_of_birth"],
   "max_words_in_sentence": 40,
   "query_timeout": 60,
   "viewable_meta": [

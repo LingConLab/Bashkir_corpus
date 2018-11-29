@@ -38,7 +38,10 @@ for lang in settings['languages']:
     word_freq_by_rank.append(sentView.extract_cumulative_freq_by_rank(sc.get_word_freq_by_rank(lang)))
     # number of lemmata for each frequency rank
     lemma_freq_by_rank.append(sentView.extract_cumulative_freq_by_rank(sc.get_lemma_freq_by_rank(lang)))
-linePlotMetafields = ['year']   # metadata fields whose statistics can be displayed on a line plot
+if 'line_plot_meta' in settings:
+    linePlotMetafields = settings['line_plot_meta']
+else:
+    linePlotMetafields = ['year']   # metadata fields whose statistics can be displayed on a line plot
 
 
 def jsonp(func):
@@ -271,7 +274,8 @@ def add_sent_data_for_session(sent, sentData):
             sentData['languages'][langView] = {'id': sent['_id'],
                                                'next_id': nextID,
                                                'prev_id': prevID,
-                                               'highlighted_text': highlightedText}
+                                               'highlighted_text': highlightedText,
+                                               'source': sent['_source']}
         else:
             if ('next_id' not in sentData['languages'][langView]
                     or nextID == -1
@@ -370,11 +374,12 @@ def update_expanded_contexts(context, neighboringIDs):
             if side in context['languages'][lang] and len(context['languages'][lang][side]) > 0:
                 curSent['languages'][lang][side + '_id'] = neighboringIDs[lang][side]
 
+
 @app.route('/')
 def start_page():
-    return render_template('start_page.html')    
-    
-    
+    return render_template('start_page.html')   
+
+
 @app.route('/search')
 def search_page():
     """
@@ -1033,7 +1038,7 @@ def find_sentences_json(page=0):
             nWords = query['n_words']
             for iQueryWord in range(2, nWords + 1):
                 if 'lang' + str(iQueryWord) in query and query['lang' + str(iQueryWord)] != query['lang1']:
-                    print(negWords)
+                    # print(negWords)
                     negWords.append(iQueryWord)
 
     if (len(wordConstraints) > 0
@@ -1484,13 +1489,17 @@ def get_word_fields():
     result = ''
     wordFields = None
     sentMeta = None
+    intMetaFields = None
     if 'word_fields' in settings and len(settings['word_fields']) > 0:
         wordFields = settings['word_fields']
     if 'sentence_meta' in settings and len(settings['sentence_meta']) > 0:
         sentMeta = settings['sentence_meta']
+    if 'integer_meta_fields' in settings and len(settings['integer_meta_fields']) > 0:
+        intMetaFields = settings['integer_meta_fields']
     result += render_template('common_additional_search_fields.html',
                               word_fields=wordFields,
                               sentence_meta=sentMeta,
+                              int_meta_fields=intMetaFields,
                               ambiguous_analyses=settings['ambiguous_analyses'])
     return result
 
@@ -1619,6 +1628,35 @@ def get_gloss_selector(lang=''):
         return ''
     glossSelection = settings['lang_props'][lang]['gloss_selection']
     return render_template('select_gloss.html', glosses=glossSelection)
+
+
+@app.route('/get_glossed_sentence/<int:n>')
+def get_glossed_sentence(n):
+    """
+    Return a tab-delimited glossed sentence ready for insertion into
+    a linguistic paper.
+    """
+    if n < 0:
+        return ''
+    sentData = get_session_data('sentence_data')
+    if sentData is None or n >= len(sentData) or 'languages' not in sentData[n]:
+        return ''
+    curSentData = sentData[n]
+    for langView in curSentData['languages']:
+        lang = langView
+        try:
+            langID = settings['languages'].index(langView)
+        except:
+            # Language + number of the translation version: chop off the number
+            langID = settings['languages'].index(re.sub('_[0-9]+$', '', langView))
+            lang = settings['languages'][langID]
+        if langID != 0:
+            continue  # for now
+        result = sentView.get_glossed_sentence(curSentData['languages'][langView]['source'], lang=lang)
+        if type(result) == str:
+            return result
+        return ''
+    return ''
 
 
 @app.route('/set_locale/<lang>')
