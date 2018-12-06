@@ -7,7 +7,93 @@
 <hr class="separator">
 	{% for field in sentence_meta %}
 		{% if int_meta_fields and field in int_meta_fields %}
-		{{ _('metafield_' + field) | capitalize }}: <input type="number" class="search_input_num" name="sent_meta_{{ field }}_FR1" id="sent_meta_{{ field }}1">&ndash;<input type="number" class="search_input_num" name="sent_meta_{{ field }}_TO1" id="sent_meta_{{ field }}1"><br>
+		{{ _('metafield_' + field) | capitalize }}: <input type="number" class="search_input_num" name="sent_meta_{{ field }}_FR1" id="sent_meta_{{ field }}1"> &ndash;<input type="number" class="search_input_num" name="sent_meta_{{ field }}_TO1" id="sent_meta_{{ field }}1"><br>
+		{% elif field == 'is_able_to_write' %}
+		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
+		<option value="да">{{ _('да') }}</option>
+		</select><br>
+                {% elif field == 'is_able_to_read' %}
+		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
+		<option value="да">{{ _('да') }}</option>
+		</select><br>
+                {% elif field == 'place_of_birth' %}
+		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
+		<option value="">{{ _('any') }}</option>
+		<option value="Рахметово (Абзелиловский р-н)">{{ _('Рахметово (Абзелиловский р-н)') }}</option>
+		<option value="Баимово (Абзелиловский р-н)">{{ _('Баимово (Абзелиловский р-н)') }}</option>
+		<option value="Старокалмашево (Чекмагушевский р-н)">{{ _('Старокалмашево (Чекмагушевский р-н)') }}</option>
+                <option value="Кулуево (Аргаяшский р-н Челябинской обл.)">{{ _('Кулуево (Аргаяшский р-н Челябинской обл.)') }}</option>
+		<option value="Нукатово (Белорецкий р-н)">{{ _('Нукатово (Белорецкий р-н)') }}</option>
+                <option value="Даутово (Абзелиловский р-н)">{{ _('Даутово (Абзелиловский р-н)') }}</option>
+                <option value="Батталово (Учалинский р-н)">{{ _('Батталово (Учалинский р-н)') }}</option>
+                <option value="Новомунасипово (Бурзянский р-н)">{{ _('Новомунасипово (Бурзянский р-н)') }}</option>
+                <option value="Яйкарово (Абзелиловский р-н)">{{ _('Яйкарово (Абзелиловский р-н)') }}</option>
+		<option value="Еникеево (Абзелиловский р-н)">{{ _('Еникеево (Абзелиловский р-н)') }}</option>
+		<option value="Таштимерово (Абзелиловский р-н)">{{ _('Таштимерово (Абзелиловский р-н)') }}</option>
+		<option value="Новобалапаново (Абзелиловский р-н)">{{ _('Новобалапаново (Абзелиловский р-н)') }}</option>
+		<option value="Верхнебиккузино (Кугарчинский р-н)">{{ _('Верхнебиккузино (Кугарчинский р-н)') }}</option>
+		<option value="Магнитогорск">{{ _('Магнитогорск') }}</option>
+		<option value="Кумертау">{{ _('Кумертау') }}</option>
+		<option value="Белорецк">{{ _('Белорецк') }}</option>
+		<option value="Учалы">{{ _('Учалы') }}</option>
+		<option value="?">{{ _('?') }}</option>
+		</select><br>
+		{% elif field == 'gender' %}
+		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
+		<option value="">{{ _('any') }}</option>
+		<option value="M">{{ _('M') }}</option>
+		<option value="F">{{ _('F') }}</option>
+		</select><br>
+                {% elif field == 'education' %}
+		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
+		<option value="">{{ _('any') }}</option>
+		<option value="высшее">{{ _('высшее') }}</option>
+		<option value="среднее специальное">{{ _('среднее специальное') }}</option>
+		<option value="среднее">{{ _('среднее') }}</option>
+		<option value="начальное">{{ _('начальное') }}</option>
+		<option value="?">{{ _('?') }}</option>
+		</select><br>
+                {% elif field == 'speaker' %}
+		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
+		<option value="">{{ _('any') }}</option>
+		<option value="aamB">aamB</option>
+		<option value="aga">aga</option>
+		<option value="bbm">bbm</option>
+		<option value="dhm">dhm</option>
+		<option value="fmj">fmj</option>
+		<option value="gaj">gaj</option>
+		<option value="ggmT">ggmT</option>
+		<option value="ggs">ggs</option>
+		<option value="gmxB">gmxB</option>
+		<option value="grg">grg</option>
+		<option value="gru">gru</option>
+		<option value="iaj">iaj</option>
+		<option value="iim">iim</option>
+		<option value="iliB">iliB</option>
+		<option value="img">img</option>
+		<option value="izg">izg</option>
+		<option value="ksg">ksg</option>
+		<option value="lba">lba</option>
+		<option value="lsm">lsm</option>
+		<option value="mfsB">mfsB</option>
+		<option value="mjj">mjj</option>
+		<option value="mmmT">mmmT</option>
+		<option value="mtsB">mtsB</option>
+		<option value="nfg">nfg</option>
+		<option value="ngg">ngg</option>
+		<option value="nsgB">nsgB</option>
+		<option value="rgj">rgj</option>
+		<option value="rja">rja</option>
+		<option value="rkhB">rkhB</option>
+		<option value="rmm">rmm</option>
+		<option value="rrg">rrg</option>
+		<option value="rrm">rrm</option>
+		<option value="rsmB">rsmB</option>
+		<option value="rtk">rtk</option>
+		<option value="rza">rza</option>
+		<option value="zdn">zdn</option>
+		<option value="zmg">zmg</option>
+		</select><br>
 		{% else %}
 		{{ _('metafield_' + field) | capitalize }}: <input type="text" class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1"><br>
 		{% endif %}

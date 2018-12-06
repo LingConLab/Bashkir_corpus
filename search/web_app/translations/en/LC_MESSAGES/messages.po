@@ -21,7 +21,7 @@ msgstr ""
 # ********  Please fill in the following strings:  ********
 
 msgid "corpus_title"
-msgstr "(INSERT CORPUS TITLE IN messages.po)"
+msgstr "Oral corpus of Bashkir spoken in Rakhmetovo and Baimovo"
 
 # Language names for the dropdown menu in search panel (please add all missing languages that you have in the corpus):
 
@@ -374,11 +374,92 @@ msgid "metafield_lang"
 msgstr "Original language"
 
 msgid "metafield_lang_trans"
-msgstr "Language of translation"
+msgstr "language of translation"
 
-msgid "metafield_date_trans"
-msgstr "Date of translation"
+msgid "metafield_year_of_birth"
+msgstr "year of birth"
 
+msgid "metafield_place_of_birth"
+msgstr "place of birth"
+
+msgid "metafield_education"
+msgstr "education"
+
+msgid "metafield_is_able_to_write"
+msgstr "able_to_write"
+
+msgid "metafield_is_able_to_read"
+msgstr "able_to_read"
+
+
+
+# Metadata values you have in the corpus:
+
+msgid "да"
+msgstr "yes"
+
+msgid "начальное"
+msgstr "primary"
+
+msgid "среднее"
+msgstr "secondary"
+
+msgid "среднее специальное"
+msgstr "specialized secondary"
+
+msgid "высшее"
+msgstr "higher"
+
+msgid "Рахметово (Абзелиловский р-н)"
+msgstr "Rakhmetovo (Abzelilovsky district)"
+
+msgid "Баимово (Абзелиловский р-н)"
+msgstr "Baimovo (Abzelilovsky district)"
+
+msgid "Старокалмашево (Чекмагушевский р-н)"
+msgstr "Starokalmashevo (Chekmagushevsky district)"
+
+msgid "Кулуево (Аргаяшский р-н Челябинской обл.)"
+msgstr "Kuluevo (Argayashsky district of Chelyabinsk Oblast)"
+
+msgid "Нукатово (Белорецкий р-н)"
+msgstr "Nukatovo (Beloretsky district)"
+
+msgid "Даутово (Абзелиловский р-н)"
+msgstr "Dautovo (Abzelilovsky district)"
+
+msgid "Батталово (Учалинский р-н)"
+msgstr "Battalovo (Uchalinsky district)"
+
+msgid "Новомунасипово (Бурзянский р-н)"
+msgstr "Novomunasipovo (Burzyansky district)"
+
+msgid "Яйкарово (Абзелиловский р-н)"
+msgstr "Iajkarovo (Abzelilovsky district)"
+
+msgid "Еникеево (Абзелиловский р-н)"
+msgstr "Enikejevo (Abzelilovsky district)"
+
+msgid "Таштимерово (Абзелиловский р-н)"
+msgstr "Tashtimerovo (Abzelilovsky district)"
+
+msgid "Новобалапаново (Абзелиловский р-н)"
+msgstr "Novobalapanovo (Abzelilovsky district)"
+
+msgid "Верхнебиккузино (Кугарчинский р-н)"
+msgstr "Verhnebikkuzino (Kugarchinsky district)"
+
+msgid "Магнитогорск"
+msgstr "Magnitogorsk"
+
+msgid "Кумертау"
+msgstr "Kumertau"
+
+msgid "Белорецк"
+msgstr "Beloretsk"
+
+msgid "Учалы"
+msgstr "Uchaly"
 
 
 # Names of the metadata values you have in the corpus:

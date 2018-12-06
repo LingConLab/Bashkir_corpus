@@ -598,9 +598,9 @@ hr.separator {
 }
 
 #media_div {
-	width: 450px;
+	width: 250px;
 	padding: 10px;
-	float: left;
+	float: right;
 	display: inline-block;
 }
 

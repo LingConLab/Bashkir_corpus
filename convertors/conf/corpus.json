@@ -28,6 +28,8 @@
   "meta_files_ext": true,
   "meta_files_dir": false,
   "meta_files_case_sensitive": true,
+  "parsed_wordlist_filename": "all_parsed.txt",
+  "parsed_wordlist_format": "txt",
   "cg_disambiguate": false,
   "json_indent": 1,
   "convert_quotes": true,

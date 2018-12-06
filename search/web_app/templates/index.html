@@ -65,6 +65,7 @@ var nothingFoundCaption = "{{ _('Nothing found.') }}";
         </div>
 		<!-- <div> -->
             <!-- Tab panes -->
+            
             <div class="tab-content">
 				<div class="tab-pane active" id="word_search_tab">
 					<div class="words_search">
@@ -105,6 +106,7 @@ var nothingFoundCaption = "{{ _('Nothing found.') }}";
 								<span class="word_expand glyphicon glyphicon-chevron-down" aria-label="{{ _('more_fields') }}" aria-hidden="true"><span class="tooltip_prompt">{{ _('more_fields') }}</span></span><br>
 								<input type="checkbox" class="hidden_input neg_query_checkbox" name="negq1" id="negq1" onclick="negative_query();">
 							</div>
+							
 						</div>
 					</div>
 					<br>
@@ -192,15 +194,6 @@ var nothingFoundCaption = "{{ _('Nothing found.') }}";
 </div>
 
 <div id="lower_part">
-{% if media %}
-<div id="media_div" style="display: none">
-<video id="src_player" class="video-js" type='video/mpeg' controls preload="auto" width="400" height="300" data-setup='{ {% if youtube %}"techOrder": ["youtube"]{% endif %} }'>
-<p class="vjs-no-js">
-To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>.
-</p>
-</video>
-</div>
-{% endif %}
 <div id="res_p">
 <p style="font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;">{{ _('(Place for results)') }}</p></div>
 <div class="progress" style="visibility: hidden">
@@ -210,7 +203,7 @@ To view this video please enable JavaScript, and consider upgrading to a web bro
   </div>
 </div>
 </div>
-
+			
 
 <!-- Hidden elements -->
 <div id="analysis"></div>
@@ -239,20 +232,31 @@ To view this video please enable JavaScript, and consider upgrading to a web bro
 			<div class="modal-body" id="help_dialogue_body">
 			<p>The help text should be loaded here.</p>
 			</div>
+
 		</div>
-	</div>
 </div>
+</div>
+
 
 {% include "query_share_load.html" %}
 <script src="https://d3js.org/d3.v4.min.js"></script>
 {% include "subcorpus_selection.html" %}
 {% include "word_stats.html" %}
 <script type='text/javascript' src='static/js/select_subcorpus.js'></script>
+		  {% if media %}
+<div id="media_div" style="display: none">
+<video id="src_player" class="video-js" type='video/mpeg' controls preload="auto" width="200" height="100" data-setup='{ {% if youtube %}"techOrder": ["youtube"]{% endif %} }'>
+<p class="vjs-no-js">
+To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>.
+</p>
+</video>
+</div>
+{% endif %}
 </body>
 {% if media %}
 	<script>
 	$(function() {
-		$('#res_p').css('width', 'calc(95vw - ' + $('#media_div').width().toString() + 'px)');
+		$('#res_p').css('width', 'calc(100vw - ' + $('#media_div').width().toString() + 'px)');
 	});
 	</script>
 {% endif %}

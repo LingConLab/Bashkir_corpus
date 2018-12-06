@@ -148,11 +148,11 @@
             {"type": "gramm", "value": "adj", "category": "pos", "tooltip": "Adjective"},
             {"type": "gramm", "value": "adv", "category": "pos", "tooltip": "Adverb"},
             {"type": "gramm", "value": "num", "category": "pos", "tooltip": "Numeral"},
-            {"type": "gramm", "value": "pro", "category": "pos", "tooltip": "Pronoun"},
+            {"type": "gramm", "value": "pron", "category": "pos", "tooltip": "Pronoun"},
             {"type": "gramm", "value": "post", "category": "pos", "tooltip": "Postposition"},
-            {"type": "gramm", "value": "cnj", "category": "pos", "tooltip": "Conjunction"},
+            {"type": "gramm", "value": "conj", "category": "pos", "tooltip": "Conjunction"},
             {"type": "gramm", "value": "part", "category": "pos", "tooltip": "Particle"},
-            {"type": "gramm", "value": "intrj", "category": "pos", "tooltip": "Interjection"},
+            {"type": "gramm", "value": "interj", "category": "pos", "tooltip": "Interjection"},
             {"type": "gramm", "value": "word", "category": "pos", "tooltip": "Not classified words"}
           ],
           [
@@ -177,7 +177,7 @@
             {"type": "gramm", "value": "loc", "category": "case", "tooltip": "Locative"}
           ],
           [
-            {"type": "header", "value": "Possessiveness"},
+            {"type": "header", "value": "Possessions"},
             {"type": "gramm", "value": "p.1sg", "category": "poss", "tooltip": "1sg possessive"},
             {"type": "gramm", "value": "p.1pl", "category": "poss", "tooltip": "1pl possessive"},
             {"type": "gramm", "value": "p.2sg", "category": "poss", "tooltip": "2sg possessive"},
@@ -186,10 +186,10 @@
           ],
           [
             {"type": "header", "value": "Tense/Mood"},
-            {"type": "gramm", "value": "ipfv", "category": "tense", "tooltip": "Imperfective tense"},
+            {"type": "gramm", "value": "ipfv", "category": "tense", "tooltip": "Imperfective"},
             {"type": "gramm", "value": "fut", "category": "tense", "tooltip": "Future tense"},
             {"type": "gramm", "value": "pst", "category": "tense", "tooltip": "Past tense"},
-            {"type": "gramm", "value": "plpf", "category": "tense", "tooltip": "Plusquamperfect"},
+            {"type": "gramm", "value": "plpf", "category": "tense", "tooltip": "Pluperfect"},
             {"type": "gramm", "value": "cond", "category": "mood", "tooltip": "Conditional"},
             {"type": "gramm", "value": "pot", "category": "mood", "tooltip": "Potential"},
             {"type": "gramm", "value": "desid", "category": "mood", "tooltip": "Desiderative"},
@@ -203,7 +203,7 @@
             {"type": "gramm", "value": "caus", "category": "tense", "tooltip": "Causative"},
             {"type": "gramm", "value": "pass", "category": "tense", "tooltip": "Passive"},
             {"type": "gramm", "value": "refl", "category": "tense", "tooltip": "Reflexive"},
-            {"type": "gramm", "value": "recp", "category": "tense", "tooltip": "Recipient"}
+            {"type": "gramm", "value": "recp", "category": "tense", "tooltip": "Reciprocal"}
           ]
         ]
       }
