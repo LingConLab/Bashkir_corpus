@@ -60,6 +60,7 @@ class SearchClient:
         return iterator
 
     def get_sentences(self, esQuery):
+        #print(esQuery)
         if self.settings['query_timeout'] > 0:
             hits = self.es.search(index=self.name + '.sentences', doc_type='sentence',
                                   body=esQuery, request_timeout=self.settings['query_timeout'])

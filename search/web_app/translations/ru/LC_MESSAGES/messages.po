@@ -251,6 +251,12 @@ msgstr "пол"
 msgid "metafield_gender"
 msgstr "пол"
 
+msgid "metafield_native_language"
+msgstr "родной язык"
+
+msgid "metafield_place_of_residence_at_the_time_of_recording"
+msgstr "место жительства на момент записи"
+
 msgid "metafield_age"
 msgstr "возраст"
 
@@ -259,6 +265,9 @@ msgstr "место рождения"
 
 msgid "metafield_speaker"
 msgstr "говорящий"
+
+msgid "metafield_speakers"
+msgstr "говорящие"
 
 msgid "metafield_published"
 msgstr "опубликовано"
@@ -406,6 +415,12 @@ msgstr "м"
 
 msgid "F"
 msgstr "ж"
+
+msgid "Tatar"
+msgstr "татарский"
+
+msgid "Bashkir"
+msgstr "башкирский"
 
 
 # Names of the metadata values you have in the corpus:

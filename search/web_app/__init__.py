@@ -1002,6 +1002,7 @@ def find_sentences_json(page=0):
     """
     Find sentences and change current options using the query in request.args.
     """
+    #print(request.args)
     if request.args and page <= 0:
         query = copy_request_args()
         page = 1
@@ -1040,7 +1041,7 @@ def find_sentences_json(page=0):
                 if 'lang' + str(iQueryWord) in query and query['lang' + str(iQueryWord)] != query['lang1']:
                     # print(negWords)
                     negWords.append(iQueryWord)
-
+    #print(query)
     if (len(wordConstraints) > 0
             and get_session_data('distance_strict')
             and 'sent_ids' not in query

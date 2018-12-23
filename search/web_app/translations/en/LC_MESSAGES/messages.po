@@ -250,6 +250,9 @@ msgstr "sex"
 msgid "metafield_gender"
 msgstr "gender"
 
+msgid "metafield_native_language"
+msgstr "native language"
+
 msgid "metafield_age"
 msgstr "age"
 
@@ -258,6 +261,9 @@ msgstr "place of origin"
 
 msgid "metafield_speaker"
 msgstr "speaker"
+
+msgid "metafield_speakers"
+msgstr "speakers"
 
 msgid "metafield_published"
 msgstr "published"

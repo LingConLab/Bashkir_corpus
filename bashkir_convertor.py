@@ -80,6 +80,7 @@ class ConLabEAFConvertor:
         self.refTiers = {}
         self.sentences = {}
         self.wordTiers = {}
+        self.idTiers = {}
         self.morphTiers = {}
         self.lemmaTiers = {}
         self.posTiers = {}
@@ -209,7 +210,7 @@ class ConLabEAFConvertor:
         return segIDs
 
     def get_annotation_ids_one_tier(self, tierNode, tierType, participant):
-        if tierType not in ('tx', 'mb', 'ge', 'gr', 'ps'):
+        if tierType not in ('id', 'tx', 'mb', 'ge', 'gr', 'ps'):
             return
         segIDs = self.get_tier_segment_ids(tierNode)
         #print(segIDs)
@@ -227,6 +228,8 @@ class ConLabEAFConvertor:
             self.morphTiers[participant] = segIDs
         elif tierType == 'ge':
             self.glossEnTiers[participant] = segIDs
+        elif tierType == 'id':
+            self.idTiers[participant] = segIDs
         elif tierType == 'gr':
             self.glossRuTiers[participant] = segIDs
             self.aid2ruGloss.update(self.get_segment_values(tierNode))

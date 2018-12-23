@@ -8,30 +8,22 @@
 	{% for field in sentence_meta %}
 		{% if int_meta_fields and field in int_meta_fields %}
 		{{ _('metafield_' + field) | capitalize }}: <input type="number" class="search_input_num" name="sent_meta_{{ field }}_FR1" id="sent_meta_{{ field }}1"> &ndash;<input type="number" class="search_input_num" name="sent_meta_{{ field }}_TO1" id="sent_meta_{{ field }}1"><br>
-		{% elif field == 'is_able_to_write' %}
-		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
-		<option value="да">{{ _('да') }}</option>
-		</select><br>
-                {% elif field == 'is_able_to_read' %}
-		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
-		<option value="да">{{ _('да') }}</option>
-		</select><br>
                 {% elif field == 'place_of_birth' %}
 		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
 		<option value="">{{ _('any') }}</option>
-		<option value="Рахметово (Абзелиловский р-н)">{{ _('Рахметово (Абзелиловский р-н)') }}</option>
-		<option value="Баимово (Абзелиловский р-н)">{{ _('Баимово (Абзелиловский р-н)') }}</option>
-		<option value="Старокалмашево (Чекмагушевский р-н)">{{ _('Старокалмашево (Чекмагушевский р-н)') }}</option>
-                <option value="Кулуево (Аргаяшский р-н Челябинской обл.)">{{ _('Кулуево (Аргаяшский р-н Челябинской обл.)') }}</option>
-		<option value="Нукатово (Белорецкий р-н)">{{ _('Нукатово (Белорецкий р-н)') }}</option>
-                <option value="Даутово (Абзелиловский р-н)">{{ _('Даутово (Абзелиловский р-н)') }}</option>
-                <option value="Батталово (Учалинский р-н)">{{ _('Батталово (Учалинский р-н)') }}</option>
-                <option value="Новомунасипово (Бурзянский р-н)">{{ _('Новомунасипово (Бурзянский р-н)') }}</option>
-                <option value="Яйкарово (Абзелиловский р-н)">{{ _('Яйкарово (Абзелиловский р-н)') }}</option>
-		<option value="Еникеево (Абзелиловский р-н)">{{ _('Еникеево (Абзелиловский р-н)') }}</option>
-		<option value="Таштимерово (Абзелиловский р-н)">{{ _('Таштимерово (Абзелиловский р-н)') }}</option>
-		<option value="Новобалапаново (Абзелиловский р-н)">{{ _('Новобалапаново (Абзелиловский р-н)') }}</option>
-		<option value="Верхнебиккузино (Кугарчинский р-н)">{{ _('Верхнебиккузино (Кугарчинский р-н)') }}</option>
+		<option value="Рахметово">{{ _('Рахметово (Абзелиловский р-н)') }}</option>
+		<option value="Баимово">{{ _('Баимово (Абзелиловский р-н)') }}</option>
+		<option value="Старокалмашево">{{ _('Старокалмашево (Чекмагушевский р-н)') }}</option>
+                <option value="Кулуево">{{ _('Кулуево (Аргаяшский р-н Челябинской обл.)') }}</option>
+		<option value="Нукатово">{{ _('Нукатово (Белорецкий р-н)') }}</option>
+                <option value="Даутово">{{ _('Даутово (Абзелиловский р-н)') }}</option>
+                <option value="Батталово">{{ _('Батталово (Учалинский р-н)') }}</option>
+                <option value="Новомунасипово">{{ _('Новомунасипово (Бурзянский р-н)') }}</option>
+                <option value="Яйкарово">{{ _('Яйкарово (Абзелиловский р-н)') }}</option>
+		<option value="Еникеево">{{ _('Еникеево (Абзелиловский р-н)') }}</option>
+		<option value="Таштимерово">{{ _('Таштимерово (Абзелиловский р-н)') }}</option>
+		<option value="Новобалапаново">{{ _('Новобалапаново (Абзелиловский р-н)') }}</option>
+		<option value="Верхнебиккузино">{{ _('Верхнебиккузино (Кугарчинский р-н)') }}</option>
 		<option value="Магнитогорск">{{ _('Магнитогорск') }}</option>
 		<option value="Кумертау">{{ _('Кумертау') }}</option>
 		<option value="Белорецк">{{ _('Белорецк') }}</option>
@@ -44,11 +36,17 @@
 		<option value="M">{{ _('M') }}</option>
 		<option value="F">{{ _('F') }}</option>
 		</select><br>
+                {% elif field == 'native_language' %}
+		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
+		<option value="">{{ _('any') }}</option>
+		<option value="татарский">{{ _('Tatar') }}</option>
+		<option value="башкирский">{{ _('Bashkir') }}</option>
+		</select><br>
                 {% elif field == 'education' %}
 		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
 		<option value="">{{ _('any') }}</option>
 		<option value="высшее">{{ _('высшее') }}</option>
-		<option value="среднее специальное">{{ _('среднее специальное') }}</option>
+		<option value="среднее&nbsp;специальное">{{ _('среднее специальное') }}</option>
 		<option value="среднее">{{ _('среднее') }}</option>
 		<option value="начальное">{{ _('начальное') }}</option>
 		<option value="?">{{ _('?') }}</option>
@@ -94,8 +92,6 @@
 		<option value="zdn">zdn</option>
 		<option value="zmg">zmg</option>
 		</select><br>
-		{% else %}
-		{{ _('metafield_' + field) | capitalize }}: <input type="text" class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1"><br>
 		{% endif %}
 	{% endfor %}
 {% endif %}
