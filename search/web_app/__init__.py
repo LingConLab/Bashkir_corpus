@@ -1552,7 +1552,7 @@ def download_cur_results_xlsx():
         return ''
     results = prepare_results_for_download(pageData)
     XLSXFilename = 'results-' + str(uuid.uuid4()) + '.xlsx'
-    workbook = xlsxwriter.Workbook('../tmp/' + XLSXFilename)
+    workbook = xlsxwriter.Workbook('tmp/' + XLSXFilename)
     worksheet = workbook.add_worksheet('Search results')
     for i in range(len(results)):
         for j in range(len(results[i])):
