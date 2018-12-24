@@ -1558,7 +1558,7 @@ def download_cur_results_xlsx():
         for j in range(len(results[i])):
             worksheet.write(i, j, results[i][j])
     workbook.close()
-    return send_from_directory('../tmp', XLSXFilename)
+    return send_from_directory('tmp', XLSXFilename)
 
 
 @app.route('/toggle_sentence/<int:sentNum>')
