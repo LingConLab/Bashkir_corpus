@@ -1169,7 +1169,6 @@ def search_sent(page=-1):
     if 'subcorpus_enabled' in hits:
         hitsProcessed['subcorpus_enabled'] = True
     sync_page_data(hitsProcessed['page'], hitsProcessed)
-
     return render_template('result_sentences.html', data=hitsProcessed)
 
 

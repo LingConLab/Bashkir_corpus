@@ -1,8 +1,8 @@
-ADJ -> adj_deriv
+ADJ -> adj
 CAR -> car
 CMPR -> cmpr
 SIMIL -> simil
-ADV -> adv_deriv
+ADV -> adv
 1PL -> 1pl
 1SG -> 1sg
 2PL -> 2pl

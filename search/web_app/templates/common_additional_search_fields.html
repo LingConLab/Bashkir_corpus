@@ -28,7 +28,7 @@
 		<option value="Кумертау">{{ _('Кумертау') }}</option>
 		<option value="Белорецк">{{ _('Белорецк') }}</option>
 		<option value="Учалы">{{ _('Учалы') }}</option>
-		<option value="?">{{ _('?') }}</option>
+		<option value="?">{{ _('неизвестно') }}</option>
 		</select><br>
 		{% elif field == 'gender' %}
 		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
@@ -46,10 +46,9 @@
 		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
 		<option value="">{{ _('any') }}</option>
 		<option value="высшее">{{ _('высшее') }}</option>
-		<option value="среднее&nbsp;специальное">{{ _('среднее специальное') }}</option>
 		<option value="среднее">{{ _('среднее') }}</option>
 		<option value="начальное">{{ _('начальное') }}</option>
-		<option value="?">{{ _('?') }}</option>
+		<option value="?">{{ _('неизвестно') }}</option>
 		</select><br>
                 {% elif field == 'speaker' %}
 		{{ _('metafield_' + field) | capitalize }}: <select class="search_input" name="sent_meta_{{ field }}1" id="sent_meta_{{ field }}1">
@@ -96,13 +95,13 @@
 	{% endfor %}
 {% endif %}
 {{ _('Analyses: ') }}<select name="n_ana1" id="n_ana1" class="search_input">
-<option value="any" selected>{{ _('any number of analyses') }}</option>
 {% if ambiguous_analyses %}
 <option value="ambiguous">{{ _('only ambiguous') }}</option>
 <option value="nonambiguous">{{ _('only non-ambiguous') }}</option>
 <option value="analyzed">{{ _('only with analysis') }}</option>
 {% else %}
 <option value="nonambiguous" selected>{{ _('only with analysis') }}</option>
+<option value="any" selected>{{ _('any number of analyses') }}</option>
 {% endif %}
 <option value="none">{{ _('only without analysis') }}</option>
 </select><br>

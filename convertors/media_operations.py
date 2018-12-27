@@ -131,11 +131,12 @@ class MediaCutter:
 
 
 if __name__ == '__main__':
-    settings = {'corpus_dir': 'corpus/conlab_bashkir/media', 'media_length': 60}
+    settings = {'corpus_dir': 'media', 'media_length': 60}
     mc = MediaCutter(settings)
-    for path, dirs, files in os.walk(settings['corpus_dir']):
+    for path, dirs, files in os.walk('test'):
         for fname in files:
             if fname.lower().endswith('.wav'):
+                print(fname) 
                 fname = os.path.abspath(os.path.join(path, fname))
                 print('Starting', fname)
                 mc.cut_media(fname)

@@ -23,14 +23,15 @@
     ".*_Morph-txt.*": "parts",
     ".*_Lemma-txt.*": "lemma",
     ".*_Gloss-txt-en.*": "gloss",
-    ".*_Gramm-txt.*": "gramm"
+    ".*_Gramm-txt.*": "gramm",
+    ".*_Gloss-txt-ru.*": "trans_ru"
   },
   "meta_files_ext": true,
   "meta_files_dir": false,
   "meta_files_case_sensitive": true,
-  "parsed_wordlist_filename": "all_parsed.txt",
-  "parsed_wordlist_format": "txt",
   "cg_disambiguate": false,
+  "parsed_wordlist_filename": {"russian": "rus_parsed.txt"},
+  "parsed_wordlist_format": "xml_rnc",
   "json_indent": 1,
   "convert_quotes": true,
   "gzip": false,

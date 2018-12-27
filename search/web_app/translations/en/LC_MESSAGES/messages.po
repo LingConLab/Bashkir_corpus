@@ -404,6 +404,9 @@ msgstr "able_to_read"
 msgid "да"
 msgstr "yes"
 
+msgid "неизвестно"
+msgstr "unknown"
+
 msgid "начальное"
 msgstr "primary"
 

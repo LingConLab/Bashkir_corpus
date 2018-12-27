@@ -4,5 +4,5 @@ search/media/
 corpus/
 *.pyc
 search/tmp/
-stem_to_trans.py
-all_parsed.txt
+convertors/search
+convertors/test

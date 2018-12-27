@@ -19,7 +19,7 @@ class DumbMorphParser:
     rxGlossParts = re.compile('[^ \\-=<>]+')
     rxGlossIndexPart = re.compile('^(.*)\\{(.*?)\\}')
 
-    def __init__(self, settings, categories, errorLog=''):
+    def __init__(self, settings, categories, errorLog='errorLog.txt'):
         self.settings = copy.deepcopy(settings)
         self.categories = copy.deepcopy(categories)
         self.rxAllGlosses = self.prepare_gloss_regex()
@@ -28,7 +28,7 @@ class DumbMorphParser:
         if ('parsed_wordlist_filename' in self.settings
                 and len(self.settings['parsed_wordlist_filename']) > 0):
             if type(self.settings['parsed_wordlist_filename']) == str:
-                self.load_analyses(os.path.join(self.settings['corpus_dir'],
+                self.load_analyses(os.path.join(self.settings['corpus_dir'], 
                                                 self.settings['parsed_wordlist_filename']))
             else:
                 for language in self.settings['parsed_wordlist_filename']:
@@ -67,9 +67,9 @@ class DumbMorphParser:
             if self.settings['parsed_wordlist_format'] == 'xml_rnc':
                 self.load_analyses_xml_rnc(text, lang=lang)
         except FileNotFoundError:
-            fLog = open(self.errorLog, 'a', encoding='utf-8')
-            fLog.write('File not found: ' + fname + '\n')
-            fLog.close()
+            #fLog = open(self.errorLog, 'a', encoding='utf-8')
+            print('File not found: ' + fname + '\n')
+            #fLog.close()
 
     def transform_gramm_str(self, grStr, lang=''):
         """

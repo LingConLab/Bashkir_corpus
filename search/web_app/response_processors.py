@@ -311,6 +311,7 @@ class SentenceViewer:
         else:
             result = '<span class="context_header" data-meta="">'
         docID = sentSource['doc_id']
+        sentNum = sentSource['number']
         meta = self.sc.get_doc_by_id(docID)
         #print(meta)
         if (meta is None
@@ -354,9 +355,10 @@ class SentenceViewer:
                 else:
                     dateDisplayed += '&ndash;' + str(meta['year_to'])
             if format == 'csv':
-                result += '[' + dateDisplayed + ']'
+                result += '[' + dateDisplayed + ', ' + sentNum + ']'
             else:
                 result += '<span class="ch_date">' + dateDisplayed + '</span>'
+                result += '<span class="ch_sent">' + sentNum + '</span>'
         dataMeta = ''
         for metaField in self.settings['viewable_meta']:
             if metaField == 'filename':
@@ -368,6 +370,7 @@ class SentenceViewer:
                 dataMeta += metaField + ': ' + metaValue + '\\n'
             except KeyError:
                 pass
+        dataMeta += 'sentence number: ' + sentNum + '\\n'
         dataMeta = dataMeta.replace('"', '&quot;')
         if len(dataMeta) > 0 and format != 'csv':
             result = result.replace('data-meta=""', 'data-meta="' + dataMeta + '"')

@@ -192,7 +192,7 @@ class Eaf2JSON(Txt2JSON):
         """
         analyses = []
         analysisTiers = []
-        for tierType in ['pos', 'gramm', 'lemma', 'parts', 'gloss']:
+        for tierType in ['pos', 'gramm', 'lemma', 'parts', 'gloss', 'trans_ru']:
             if (aID, tierType) not in self.segmentChildren:
                 continue
             analysisTiers.append([])
@@ -207,6 +207,10 @@ class Eaf2JSON(Txt2JSON):
                         ana['parts'] = contents
                     elif tierType == 'gloss':
                         ana['gloss'] = contents
+                    elif tierType == 'trans_ru':
+                        #print(contents)
+                        if re.findall('[а-яёА-ЯЁ]+', contents):
+                            ana['trans_ru'] = re.findall('[а-яёА-ЯЁ._]+', contents)[0].strip('.')
                     elif tierType == 'pos' and len(contents) > 0:
                         ana['gr.pos'] = contents
                     elif tierType == 'gramm':
@@ -504,7 +508,7 @@ class Eaf2JSON(Txt2JSON):
         self.write_output(fnameTarget, textJSON)
         return nTokens, nWords, nAnalyzed
 
-    def process_corpus(self, cutMedia=True):
+    def process_corpus(self, cutMedia=False):
         """
         Take every eaf file from the source directory subtree, turn it
         into a parsed json and store it in the target directory.
@@ -512,7 +516,7 @@ class Eaf2JSON(Txt2JSON):
         Txt2JSON.process_corpus(self)
         if not cutMedia:
             return
-        for path, dirs, files in os.walk(os.path.join(self.corpusSettings['corpus_dir'],
+        for path, dirs, files in os.walk(os.path.join('..',
                                                       self.srcExt)):
             for fname in files:
                 fileExt = os.path.splitext(fname.lower())[1]
@@ -524,4 +528,4 @@ class Eaf2JSON(Txt2JSON):
 
 if __name__ == '__main__':
     t2j = Eaf2JSON()
-    t2j.process_corpus(cutMedia=True)
+    t2j.process_corpus(cutMedia=False)
