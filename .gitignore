@@ -6,3 +6,5 @@ corpus/
 search/tmp/
 convertors/search
 convertors/test
+search/web_app/translations/ru/LC_MESSAGES/messages.mo
+search/web_app/translations/en/LC_MESSAGES/messages.mo
