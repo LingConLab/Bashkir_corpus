@@ -1,4 +1,4 @@
-from flask import Flask, request, after_this_request, render_template, session, jsonify, current_app, send_from_directory, make_response, config
+from flask import Flask, redirect, request, after_this_request, render_template, session, jsonify, current_app, send_from_directory, make_response, config
 from flask_babel import gettext
 import json
 import gzip
@@ -1664,7 +1664,7 @@ def set_locale(lang=''):
     if lang not in settings['interface_languages']:
         return
     set_session_data('locale', lang)
-    return ''
+    return redirect("/")
 
 
 @app.route('/help_dialogue')

@@ -1008,3 +1008,888 @@ msgstr "If you want to share your query with someone, send them the text you see
 
 msgid "Here you can load a corpus query someone sent you. Please enter the query below:"
 msgstr "Here you can load a corpus query someone sent you. Please enter the query below:"
+
+# English version of the start page
+
+
+msgid "Главная"
+msgstr "Home"
+
+msgid "Транслитерация"
+msgstr "Transliteration"
+
+msgid "Как пользоваться корпусом"
+msgstr "Instruction"
+
+msgid "Поиск"
+msgstr "Search"
+
+msgid "Состав корпуса"
+msgstr "Corpus Composition"
+
+msgid "Создатели"
+msgstr "Project participants"
+
+msgid "Устный корпус башкирского языка"
+msgstr "Oral corpus of Bashkir"
+
+msgid "дер. Рахметово и с. Баимово"
+msgstr "spoken in Rakhmetovo and Baimovo"
+
+msgid "Корпус содержит устные тексты на башкирском языке. Тексты были записаны в 2011–2017 гг. в дер. Рахметово и с. Баимово Абзелиловского р-на респ. Башкортостан. Эти населенные пункты относятся к зоне распространения кубалякского говора башкирского языка, принадлежащего к юго-восточной группе восточных говоров башкирского языка (с некоторыми чертами южных говоров). В целом тексты корпуса близки к литературному башкирскому языку, но имеют некоторые диалектные черты на уровне фонетики и морфонологии."
+msgstr "The corpus contains oral texts in Bashkir recorded in 2011–2017 in the villages of Rakhmetovo and Baimovo of the Abzelilovsky district in the Republic of Bashkortostan. These villages are located in the Kubelyak dialect zone. The Kubelyak dialect belongs to the Southeastern subbranch of the Eastern dialect of Bashkir (with some traits of the Southern dialect). The texts of the corpus are close to standard Bashkir, although they manifest some phonetic and morphophonological dialectal features."
+
+msgid "К поиску"
+msgstr "Search"
+
+msgid "Тексты Устного корпуса башкирского языка записаны расширенной латиницей. Используемая система сочетает черты транслитерации (то есть ориентирована на башкирскую кириллическую орфографию) и транскрипции. Соответствия между башкирской орфографией и используемой системой записи представлены в таблице."
+msgstr "The texts in the Oral corpus of Bashkir spoken in Rakhmetovo and Baimovo are written in the Latin script with extension, unlike standard Bashkir orthography, which is based on the Cyrillic script. The system employed is mainly transliteration from the standard Bashkir orthography (which is based on the Cyrillic script), but has some features of a phonological transcription. Correspondences between standard orthography and the transliteration system employed here are shown in the table."
+
+msgid "ағас = aɣas ‘дерево’"
+msgstr "ағас = aɣas ‘tree’"
+
+msgid "ағас = aɣas ‘богатый’"
+msgstr "бай = baj ‘rich’"
+
+msgid "ваҡыт = waqət ‘время’; вагон = vagon ‘вагон’"
+msgstr "ваҡыт = waqət ‘time’; вагон = vagon ‘railroad car’"
+
+msgid "иген = igen ‘зерно’"
+msgstr "иген = igen ‘grain’"
+
+msgid "дуҫ = duθ ‘друг’"
+msgstr "дуҫ = duθ ‘friend’"
+
+msgid "ҙур = ður ‘большой’"
+msgstr "ҙур = ður ‘big’"
+
+msgid "ете = jete ‘семь’"
+msgstr "ете = jete ‘seven’"
+
+msgid "самолёт = samolyot ‘самолёт’"
+msgstr "самолёт = samolyot ‘airplane’"
+
+msgid "хужа = xuža ‘хозяин’"
+msgstr "хужа = xuža ‘owner’"
+
+msgid "зыян = zəjan ‘ущерб’"
+msgstr "зыян = zəjan ‘damage’"
+
+msgid "инеү = inew ‘входить’"
+msgstr "инеү = inew ‘enter’"
+
+msgid "йомортҡа = jomortqa ‘яйцо’"
+msgstr "йомортҡа = jomortqa ‘egg’"
+
+msgid "кеше = keše ‘человек’"
+msgstr "кеше = keše ‘person’"
+
+msgid "ҡала = qala ‘город’"
+msgstr "ҡала = qala ‘town’"
+
+msgid "ләкин = läkin ‘но’"
+msgstr "ләкин = läkin ‘but’"
+
+msgid "май = maj ‘масло’"
+msgstr "май = maj ‘butter’"
+
+msgid "нисек = nisek ‘как’"
+msgstr "нисек = nisek ‘as’"
+
+msgid "тыңлау = təŋlaw ‘слушать’"
+msgstr "тыңлау = təŋlaw ‘listen’"
+
+msgid "оҙон = oðon ‘длинный’"
+msgstr "оҙон = oðon ‘long’"
+
+msgid "өй = öj ‘дом’"
+msgstr "өй = öj ‘house’"
+
+msgid "ҡапыл = qapəl ‘вдруг’"
+msgstr "ҡапыл = qapəl ‘suddenly’"
+
+msgid "риза = riza ‘согласен’"
+msgstr "риза = riza ‘agree (adj.)’"
+
+msgid "сығыу = səɣəw ‘выходить’"
+msgstr "сығыу = səɣəw ‘go out’"
+
+msgid "үҫеү = üθew ‘расти’"
+msgstr "үҫеү = üθew ‘grow’"
+
+msgid "тороу = torow ‘стоять’"
+msgstr "тороу = torow ‘stand’"
+
+msgid "ҡунаҡ = qunaq ‘гость’; баҫыу = baθəw ‘поле’; ауыл = awəl ‘деревня’"
+msgstr "ҡунаҡ = qunaq ‘guest’; баҫыу = baθəw ‘field’; ауыл = awəl ‘village’"
+
+msgid "үҫеү = üθew ‘расти’"
+msgstr "үҫеү = üθew ‘grow’"
+
+msgid "картуф = kartuf ‘картошка’"
+msgstr "картуф = kartuf ‘potato’"
+
+msgid "хәҙер = xäðer ‘сейчас’"
+msgstr "хәҙер = xäðer ‘now’"
+
+msgid "һыу = həw ‘вода’"
+msgstr "һыу = həw ‘water’"
+
+msgid "нация = nacija ‘нация’"
+msgstr "нация = nacija ‘nation’"
+
+msgid "Учалы = Učalə ‘Учалы’"
+msgstr "Учалы = Učalə ‘Uchaly’"
+
+msgid "йәш = jäš ‘возраст’"
+msgstr "йәш = jäš ‘age’"
+
+msgid "училище = učilišče ‘училище’"
+msgstr "училище = učilišče ‘vocational school’"
+
+msgid "донъя = donja ‘мир’"
+msgstr "донъя = donja ‘world’"
+
+msgid "быяла = bəjala ‘стекло’"
+msgstr "быяла = bəjala ‘glass’"
+
+msgid "Ҡөрьән = Qörʔän ‘Коран’; февраль = fevraly ‘февраль’"
+msgstr "Ҡөрьән = Qörʔän ‘Quran’; февраль = fevraly ‘February’"
+
+msgid "эсеү = esew ‘пить’"
+msgstr "эсеү = esew ‘drink’"
+
+msgid "бүләк = büläk ‘подарок’"
+msgstr "бүләк = büläk ‘gift’"
+
+msgid "юл = jul ‘дорога’; юкә = jükä ‘липа’"
+msgstr "юл = jul ‘way, road’; юкә = jükä ‘linden tree’"
+
+msgid "япраҡ = japraq ‘лист’; сентябрь = sentyabry ‘сентябрь’"
+msgstr "япраҡ = japraq ‘leave’; сентябрь = sentyabry ‘September’"
+
+msgid "Фрагменты записанных текстов, в которых произносятся русские слова без каких-либо признаков фонетической или грамматической адаптации, трактовались как случаи переключения кода и отображались в текстах корпуса при помощи кириллицы. В ряде случаев переключение происходит внутри единого высказывания, ср. Məna šulaj itep jäšänek... труд... труд кормил... труд кормил... məna šulaj buldə. ‘Вот так вот мы жили... труд... труд кормил... труд кормил... вот так было’."
+msgstr "Those fragments in recorded texts where Russian words are pronounced without any phonetic or grammatical adaptation to Bashkir were considered instances of code switching. These fragments are represented using Russian orthography, in Cyrillic letters. In some cases, code switching occurs within a single utterance, as in the following example: Məna šulaj itep jäšänek... труд... труд кормил... труд кормил... məna šulaj buldə. ‘That is how we lived… work… we worked to live… we worked to live… that is how it was’."
+
+msgid ". Инструкция с описанием общих технических возможностей поиска в корпусах этого типа содержится в разделе «Справка» (кнопка с вопросительным знаком в правом верхнем углу страницы поиска). Здесь же описываются правила, специфические для данного Корпуса."
+msgstr ". A more general instruction with common technical properties of these corpora can be found in the “Help” section (look for the button marked with a question mark in the top right corner of the search page). The current text describes those rules and conventions that are specific for this Corpus."
+
+msgid "Основные возможности поиска"
+msgstr "Main search options"
+
+msgid ". Например, для поиска всех вхождений формы местного падежа мәктәптә ‘в школе’ существительного мәктәп ‘школа’ нужно задать в поле «Слово» словоформу mäktäptä."
+msgstr ". For example, if you want to find all uses of the locative case form мәктәптә ‘at school’ (the base form of the noun is мәктәп ‘school’), you should enter mäktäptä in the “Word” field."
+
+msgid "Особым образом записаны формы императива (повелительного наклонения): в них после основы (но до личного показателя 2-го лица множественного числа) использован символ Ø, как в следующих примерах:"
+msgstr "Note that imperative forms of Bashkir verbs are written in a specific format: they contain a zero symbol (as marker of the imperative mood) after their stem (but before the 2pl person marker, if present), as in the following examples:"
+
+msgid "‘смотри’"
+msgstr "‘look!’"
+
+msgid "‘выходите’"
+msgstr "‘go out (pl.)!’"
+
+msgid "Об использовании регулярных выражений и других возможностях поиска по слову см. раздел Справка."
+msgstr "The use of regular expressions in search queries and other search options are discussed in the “Help” section."
+
+msgid "Это поле следует использовать для поиска всех форм одного слова (лексемы, леммы). Например, если в это поле вбить слово mäktäp (мәктәп в орфографической записи, ‘школа’), то в поисковой выдаче окажутся все вхождения этого существительного во всех его формах, например, mäktäp ‘школа’, mäktäpte [mäktäp-te, школа-ACC] ‘школу’, mäktäb-e-ndä [mäktäbendä, школа-P.3-LOC] ‘в его школе’ и т.д."
+msgstr "This field should be used if you need to find all forms of a given word (a.k.a. lemma, or lexeme). For example, if you enter “mäktäp” in this field (this corresponds to мәктәп in standard orthography, ‘school’), the search results will show all sentences where any form of this noun is used, e.g., mäktäp ‘school’, mäktäpte [mäktäp-te, school-ACC] ‘school (direct object)’, mäktäb-e-ndä [mäktäbendä, school-P.3-LOC] ‘in his school’, etc."
+
+msgid "Леммы следует вводить в поле поиска в начальной форме, т.е. в той же форме, которая обычно используется в башкирских словарях. Для существительных, прилагательных, наречий, местоимений и числительных выбор начальной формы не вызывает сложностей (например, öj ‘дом’, bäläkäj ‘маленький’, xäðer ‘сейчас’, hin ‘ты’, ike ‘два’). Для глаголов в соответствии с традицией используется форма номинализации на –w, например, ešläw ‘работать’, aləw ‘брать’ и т.д."
+msgstr "Lemmas should be entered in this field in their base form, that is, in the same form which is also used in dictionaries. For nouns, adjectives, adverbs, pronouns and numerals, identification of the base form is unproblematic (e.g., öj ‘house’, bäläkäj ‘small’, xäðer ‘now’, hin ‘thou’, ike ‘two’). For verbs, in accordance with the lexicographic practice, the nominalized with the suffix ‑w is used, e.g., ešläw ‘to work’, aləw ‘to take’ etc."
+
+msgid "Для записываемых в виде отдельного слова энклитик («частиц»), имеющих алломорфы, определяемые морфонологическими правилами, в качестве основных принимаются варианты la (‘же’; по этому запросу будут найдены и все остальные варианты – da, ða, ta, lä и т.д.) и ɣəna (‘только’; по этому запросу будут получены и варианты genä, qəna и kenä)."
+msgstr "There are two enclitics (sometimes referred to as “particles” in available grammars) that undergo regular morphonological alternations typical of affixes but are orthographically represented as separate words and can be searched for as separate words. In order to find these enclitics, you should enter the following forms as their base forms: “la” (‘also’; this search query will also produce all other forms of this enclitic, such as da, ða, ta, lä etc.) and “ɣəna” (‘just’; this search query will also yield other variants, such as genä, qəna and kenä)."
+
+msgid "Для нерегулярных глагольных форм ine, ikän и ihä (грамматикализованные формы глагола ‘быть’) единая лемма не постулируется."
+msgstr "Irregular verb forms ine, ikän and ihä (these are grammaticalized forms of the obsolete verb ‘to be’) are not treated as inflectional forms of any verb lemma."
+
+msgid "Поле «Грамматика» позволяет осуществлять поиск по частям речи и грамматическим категориям. Для того, чтобы воспользоваться этим поиском, необходимо нажать на кнопку в правой части поля «Грамматика» — появится окно-подсказка, в котором можно выбрать необходимые грамматические пометы."
+msgstr "This field can be used for building search queries based on part of speech tags and grammatical categories. In order to use this search field, one should press the button immediately to the right of the “Grammar” search field itself; when you press this button, you will see a pop-up window, where you can choose from the available grammatical tags."
+
+msgid "Система частей речи, используемая в Корпусе, расшифровывается в следующей таблице."
+msgstr "The following table shows the system of part of speech tags as used in the Corpus."
+
+msgid "Включая bar ‘имеется’."
+msgstr "Including bar ‘there is’."
+
+msgid "Сюда помещены многие слова, которые в зависимости от контекста могут интерпретироваться как прилагательные или как наречия, например šəm ‘тихий’ или ‘тихо’."
+msgstr "Many lemmas that can be used as either adjectives or adverbs depending on the context are included in this category. An example is šəm, which is translated as either ‘quiet’ or ‘quietly’."
+
+msgid "В основном сюда причислены слова, которые не могут использоваться как прилагательные, например qapəl ‘вдруг’."
+msgstr "This category mostly encompasses those lemmas that can be used as adverb, but not as adjectives, such as qapəl ‘suddenly’."
+
+msgid "Как собственно послелоги Корпус воспринимает только неизменяемые послелоги типа menän ‘с’, həmaq ‘как’. Отыменные послелоги, имеющие в своем составе падежные показатели, анализируются как косвенные формы существительных (например, ald-ə-nda [передняя.часть-P.3-LOC] ‘перед’)."
+msgstr "Only indeclinable postpositions such as menän ‘with’, həmaq ‘like, as’ are treated as postpositions by the Corpus. Denominal postpositions that contain case affixes are treated as oblique forms of nouns (e.g. ald-ə-nda [front-P.3-LOC] ‘in front of’)."
+
+msgid "Как собственно союзы Корпус воспринимает только неизменяемые союзы типа läkin ‘но’. Отглагольные союзы tip и tigän воспринимаются как формы глагола tiew ‘говорить’."
+msgstr "Only unanalyzable conjunctions such as e.g. läkin ‘but’ are treated as genuine conjunctions by the Corpus. Deverbal conjunctions tip and tigän are analyzed as forms of the verb tiew ‘say’."
+
+msgid "В эту категорию попадают те энклитики, которые в башкирской орфографии записываются как отдельные слова: ɣəna ‘только’, la ‘же’, laha ‘ведь’, uq ‘же, самый’."
+msgstr "This category includes four enclitics that are treated as separate words in the Bashkir orthography and also in the Corpus, viz. ɣəna ‘just’, la ‘also’, laha ‘as, since’ and uq ‘same’."
+
+msgid "Так интерпретируются две единицы, ej и nu."
+msgstr "There are two discourse-oriented words in this category: ej and nu."
+
+msgid "Неструктурированный класс незнаменательных единиц: äje ‘да’, məna ‘это самое’ (слово-заместитель), äjðä ‘айда, давайте’ и т.д."
+msgstr "Unstructured class that includes many words without a clear denotational value: äje ‘yes’, məna ‘there’ (hesitational filler), äjðä ‘let’s, come on’ etc."
+
+msgid "В разметке Корпуса частеречные пометы (тэги) ассоциируются с первой морфемой в составе словоформы, то есть с корнем. Как следствие, словоформа целиком идентифицируется Корпусом как относящаяся к той части речи, к которой отнесен ее корень. Наличие в словоформе аффиксов, меняющих частеречные свойства, не учитываются. Например, словоформа jäšäw [жить-NMLZ] ‘жизнь’ может быть получена по запросу глагол (v), а не существительное (n), хотя по своим синтаксическим свойствам она ведет себя как существительное."
+msgstr "Part of speech tags are associated with the first morpheme in any given word form, which is normally the root. As a consequence, every word form as a whole is treated by the Corpus as if it represented the part of speech which is associated with the root. Derivational affixes that change part-of-speech membership are disregarded. For example, the word form jäšäw [live-NMLZ] ‘life’ can appear among search results if one uses “verb” (v) rather than noun (n) as the relevant part of speech tag, even though this word form has syntactic properties of a noun."
+
+msgid "Система грамматических признаков, используемых в Корпусе, представлена в следующей таблице."
+msgstr "The system of grammatical tags used in the Corpus is shown in the following table."
+
+msgid "qəððar ‘девочки’, kitälär ‘пошли’"
+msgstr "qəððar ‘girls’, kitälär ‘(they) left’"
+
+msgid "Это немаркированная по падежу форма имен; она используется в позиции подлежащего (в функции номинатива), а также в других случаях: немаркированный объект, нереферентное определение и т.д."
+msgstr "This is the unmarked form of nouns. It is used in the subject position (the nominative function), but also in other syntactic environments, e.g. as the unmarked direct object, as non-referential modifier to another nominal etc."
+
+msgid "malajðə ‘мальчика’, ajaɣən ‘его ногу’, mine ‘меня’"
+msgstr "malajðə ‘boy (acc.)’, ajaɣən ‘his leg (acc.)’, mine ‘me’"
+
+msgid "ajaqtarənəŋ ‘их ног’, unəŋ ‘его’"
+msgstr "ajaqtarənəŋ ‘of their legs’, unəŋ ‘his’"
+
+msgid "urmandan ‘из леса’"
+msgstr "urmandan ‘from (the) forest’"
+
+msgid "handəqqa ‘в сундук’, uɣa ‘ему’, hatərɣa ‘(чтоб) продать’"
+msgstr "handəqqa ‘into the chest’, uɣa ‘(to) him’, hatərɣa ‘in order to sell’"
+
+msgid "qajala ‘на скале’, beððä ‘у нас’"
+msgstr "qajala ‘on a / the rock’, beððä ‘at our place’"
+
+msgid "äsäjemde ‘мою маму’"
+msgstr "äsäjemde ‘my mother (acc.)’"
+
+msgid "xužabəð ‘наш хозяин’"
+msgstr "xužabəð ‘our host (owner)’"
+
+msgid "baqsaŋda ‘в твоем саду’"
+msgstr "baqsaŋda ‘in thy garden’"
+
+msgid "kartufəɣəððə ‘вашу картошку’"
+msgstr "kartufəɣəððə ‘you potatoes (acc.)’"
+
+msgid "aɣahə ‘его старший брат’"
+msgstr "aɣahə ‘his / her elder brother’"
+
+msgid "kilØ ‘приходи’, birØegeð ‘дайте’"
+msgstr "kilØ ‘come!’, birØegeð ‘give! (plural)’"
+
+msgid "alØsə ‘возьми же’"
+msgstr "alØsə ‘take at once!’"
+
+msgid "qarajəq ‘посмотрим-ка’, äjtäjem ‘скажу-ка’"
+msgstr "qarajəq ‘let’s see’, äjtäjem ‘should I say?’"
+
+msgid "ithen ‘пусть сделает’"
+msgstr "ithen ‘let him / her do’"
+
+msgid "eshäŋ ‘если выпьешь’"
+msgstr "eshäŋ ‘if thou drink’"
+
+msgid "aldə ‘взял’, inem ‘я был(а)’; в грамматиках «прошедшее определенное»"
+msgstr "aldə ‘took’, inem ‘I was’; this form is called “definite past” in some grammars"
+
+msgid "barɣajnəm ‘я пошла’"
+msgstr "barɣajnəm ‘I went’"
+
+msgid "onotqanmən ‘я забыл’, kilgän ‘пришедший’; в грамматиках описывается как личная форма «прошедшего неопределенного» и как причастие / номинализация"
+msgstr "onotqanmən ‘I forgot’, kilgän ‘the one who came’; this form described as both “indefinite past” and participle/nominalization in some grammars"
+
+msgid "ešläjheŋ ‘ты работаешь’, jəja ‘собирает, собирая’; финитные и нефинитные употребления формы ipfv в грамматиках трактуются как две омонимичные формы: финитная форма настоящего времени и деепричастие на –a/-j"
+msgstr "ešläjheŋ ‘(thou) work’, jəja ‘(s/he gathers; while gathering’; finite and non-finite uses of this forms are treated as separate homonymous forms in the grammars: the finite present tense form and the converb in–a/-j correspondingly"
+
+msgid "səɣasaq ‘выйдет’, kiläsäkkä ‘на будущее’; может использоваться и финитно (в грамматиках «будущее определенное»), и в качестве номинализации"
+msgstr "səɣasaq ‘s/he will (certainly) come out’, kiläsäkkä ‘for the future’; this form can be used as both a finite form (“definite future tense” in the grammars) and as a nominalization"
+
+msgid "barərbəð ‘мы пойдем’, ešlärgä ‘(чтоб) делать’; в грамматиках описывается как личная форма «неопределенного будущего» и как номинализация"
+msgstr "barərbəð ‘we will (probably) go’, ešlärgä ‘(in order) to make’; this form is described in the grammars as both the finite form of the “indefinite future tense” and as a nominalization"
+
+msgid "ujanmaθqa ‘(чтоб) не проснуться’; морфологически нерегулярная отрицательная форма потенциалиса"
+msgstr "ujanmaθqa ‘(in order) not to wake up’; this is a morphologically irregular form which functions as a negative counterpart to the potential marked with –r. "
+
+msgid "ülähe ‘который должен умереть’"
+msgstr "ülähe ‘the one who must die’"
+
+msgid "haləp ‘положив’"
+msgstr "haləp ‘laying, having laid’"
+
+msgid "kergäs ‘войдя’"
+msgstr "kergäs ‘after entering’"
+
+msgid "bötkänse ‘пока не закончил’"
+msgstr "bötkänse ‘until (I, you, s/he etc.) have/has finished’"
+
+msgid "halmajənsa ‘не добавляя’"
+msgstr "halmajənsa ‘without adding’"
+
+msgid "qərqətmaqsə ‘(хотели) напугать’"
+msgstr "qərqətmaqsə ‘(wanted) to frighten’"
+
+msgid "itermen ‘сделаю’ buldəm ‘я был(а)’"
+msgstr "itermen ‘I will do’; buldəm ‘I was’"
+
+msgid "jabənabəð ‘надеваем’, hattəq ‘мы продавали’"
+msgstr "jabənabəð ‘we are putting on’, hattəq ‘we were selling’"
+
+msgid "ašajhəŋ ‘ты ешь’, səqtəŋmə ‘ты вышла?’"
+msgstr "ašajhəŋ ‘you eat’, səqtəŋmə ‘did thou go out?’"
+
+msgid "hawməhəɣəð ‘здравствуйте’, birðegeð ‘вы сдали’"
+msgstr "hawməhəɣəð ‘how do you do’, birðegeð ‘you gave’"
+
+msgid "onotmajðar ‘не забывают’"
+msgstr "onotmajðar ‘(they) do not forget’"
+
+msgid "beläŋme ‘ты знаешь?’"
+msgstr "beläŋme ‘do you know?’"
+
+msgid "hunarsə ‘охотник’"
+msgstr "hunarsə ‘hunter’"
+
+msgid "uqəw ‘учение’, jaqšələq ‘добро’, joqlaɣə (kilmäj) ‘(не хочется) спать’"
+msgstr "uqəw ‘learning’, jaqšələq ‘the good, quality’, joqlaɣə (kilmäj) ‘(there is no inclination) to sleep’"
+
+msgid "uqəwsənəqə ‘у ученика’, Räxmättekelär ‘рахметовские’"
+msgstr "uqəwsənəqə ‘the student’s’, Räxmättekelär ‘those (guys) from Rakhmetovo’"
+
+msgid "isemhəð ‘безымянный’"
+msgstr "isemhəð ‘nameless’"
+
+msgid "tiðeräk ‘(по)быстрее’"
+msgstr "tiðeräk ‘(a little) faster’"
+
+msgid "jəldaj ‘около года’"
+msgstr "jəldaj ‘about one year’"
+
+msgid "hap-haw ‘здоровый-прездоровый’"
+msgstr "hap-haw ‘very healthy, alive and kicking’"
+
+msgid "utəðlaɣan ‘примерно 30’"
+msgstr "utəðlaɣan ‘about 30’"
+
+msgid "kümäkläp ‘все вместе’"
+msgstr "kümäkläp ‘all together’"
+
+msgid "berär ‘по одному’"
+msgstr "berär ‘one by one’"
+
+msgid "dürtäwe ‘четверо’"
+msgstr "dürtäwe ‘the four’"
+
+msgid "ikense ‘другой, второй’"
+msgstr "ikense ‘second, other’"
+
+msgid "jörötä ‘носит’, kilterðe ‘вернула’"
+msgstr "jörötä ‘носит’, kilterðe ‘вернула’"
+
+msgid "atala ‘называется’"
+msgstr "atala ‘is called’"
+
+msgid "kejenä ‘одевается’"
+msgstr "kejenä ‘s/he is dressing’"
+
+msgid "höjläšälär ‘разговаривают’"
+msgstr "höjläšälär ‘(they) are talking (to each other)’"
+
+msgid "Примечание. По техническим причинам поиск по «грамматике» не позволяет найти слова со следующими аффиксами:"
+msgstr "Note. For technical reasons, it is not possible to search for word forms with the following affixes by way of using the “Grammar” field on the search page."
+
+msgid "bulmaɣandər ‘видимо, не было’, kemder ‘кто-то’"
+msgstr "bulmaɣandər ‘maybe it wasn’t’, kemder ‘somebody’"
+
+msgid "aldaɣə ‘предстоящий’, belemle ‘знающий’"
+msgstr "aldaɣə ‘preceding’, belemle ‘full of knowledge’"
+
+msgid "bašqortsa ‘по-башкирски’"
+msgstr "bašqortsa ‘in Bashkir’"
+
+msgid "Поиск по глоссам позволяет создавать запросы, касающиеся морфемной структуры словоформ. В целом этот способ поиска открывает примерно те же возможности, что и поиск по грамматике. В частности, во всплывающем окне, вызываемом кнопкой рядом с полем «глоссы», приводится почти тот же список показателей, что и при поиске по грамматике."
+msgstr "The field “Gloss” allows to submit search queries that concern the morphemic structure of the word forms. In general, this type of search is functionally similar to the search in the field “Grammar”. In particular, the list of markers that can be viewed by clicking the button next to the field “Gloss” largely overlaps with the one given in the field “Grammar”."
+
+msgid "Общие принципы работы поиска по глоссам и основные отличия такого поиска от поиска по грамматике приводятся в разделе «Справка» (кнопка с вопросительным знаком в правом верхнем углу страницы поиска). Здесь дополнительно перечисляются особенности поиска по глоссам, специфические для данного Корпуса."
+msgstr "The general principle of search by a gloss and the major differences of this type of search from the grammatical search are described in the “Help” section (the button with a question mark in the top right corner of the search window). The key features of the gloss-based search that are specific for this corpus are given below."
+
+msgid "1) Используя поиск по глоссам, можно найти словоформы, содержащие некоторые морфемы, которые не позволяет искать поиск по грамматике:"
+msgstr "1) Using gloss-based search, you can find word forms containing morphemes that cannot be found with the grammatical search:"
+
+msgid "bulmaɣandər ‘видимо, не было’, kemder ‘кто-то’"
+msgstr "bulmaɣandər ‘maybe it wasn’t’, kemder ‘somebody’"
+
+msgid "aldaɣə ‘предстоящий’, belemle ‘знающий’"
+msgstr "aldaɣə ‘preceding’, belemle ‘full of knowledge’"
+
+msgid "bašqortsa ‘по-башкирски’"
+msgstr "bašqortsa ‘in Bashkir’"
+
+msgid "2) При поиске по глоссам не находятся такие словоформы, при глоссировании которых релевантные части словоформ не членятся на морфемы. Например, словоформа дательного падежа местоимения hin ‘ты’ выглядит как hiŋä, не членится на морфемы и глоссируется целиком как ты.DAT. Эта словоформа попадает в выдачу по грамматическому запросу «dat», но при поиске по глоссам она не попадает в выдачу по запросу «STEM-DAT»."
+msgstr "2) Gloss-based search does not include the word forms where there is no morphemic border between the marker in question and the stem. For instance, the dative case form of the pronoun hin ‘thou’ is hiŋä, which is not segmentable into morphemes and glossed “thou.DAT”. This form will be among the hits of the grammatical query “dat”, but will not be included in the occurrences corresponding to the gloss-based search “STEM-DAT”."
+
+msgid "3) При записи формул строения словоформ можно воспользоваться такими элементами, как CASE, POSS и FINIT. Каждый из них соответствует не конкретной морфеме, а группе морфем. CASE — любой показатель падежа, POSS — любой притяжательный показатель, FINIT — любой показатель финитности или нефинитности на глаголе (POT, IPFV, PC.PST, CV и т.д.). Например, по запросу STEM-PL-POSS можно найти все словоформы, где к основе присоединяется сначала показатель множественного числа, а потом какой-то показатель притяжательности (например, bala-lar-ə [ребенок-PL-P.3] ‘их дети / их ребенок / его дети / ее дети’), а по запросу STEM-POSS-PL можно найти словоформы, где показатели притяжательности и числа идут в обратном порядке (например, ataj-əm-dar [отец-P.1SG-PL] ‘мои родители’)."
+msgstr "3) The gloss-based query can be constructed using either specific glosses or the options CASE, POSS and FINIT. These labels specify a group of morphemes rather than a specific gloss. CASE stands for any case marker, POSS stands for any possessive marker, and FINIT, for any marker of finite and non-finite verbal forms (POT, IPFV, PC.PST, CV и т.д.). For example, the query STEM-PL-POSS will return all the examples where the stem is followed by the plural marker and then by a possessive marker (e.g., bala-lar-ə [child-PL-P.3] ‘their children / their child / his/her children’), and the query STEM-POSS-PL will return examples with word forms where the plural marker follows a possessive marker (as in ataj-əm-dar [father-P.1SG-PL] ‘my parents’)."
+
+msgid "При помощи этих полей возможен поиск словоформ в соответствие с русским / английским переводом соответствующих лемм. Например, по запросу «уходить» в поле «Перевод (ru)» выдаются все употребления глагола kitew, корень которого глоссируется в корпусе как «уходить». Поиск по переводу не позволяет искать русские или английские словоформы, использованные в переводах башкирских предложений. Например, при помощи этой функции нельзя найти все предложения, в переводах которых используется словоформа «ушли». Чтобы найти такие предложения, необходимо воспользоваться полнотекстовым поиском."
+msgstr "These search fields allow to search for words based on the Russian / English translations of the corresponding lemmas. For instance, the search query “give” in the field “Translation (en)” will result in all the occurrences of the verb qajtəw, which has a gloss “come”. This search field does not allow to find Russian and English words used in the translation of the Bashkir sentences. This search field does not allow do find Russian and English words used in the translations of the Bashkir sentences. For example, it is impossible to find all the sentences containing the Russian word “пришел” (‘came’) using this field. To find these sentences, use the full-text search."
+
+msgid "Параметры поиска, связанные с говорящим, с которым записан текст, устроены по принципу выпадающих окон, в которых перечислены все встретившиеся в Корпусе значения параметров. Например, в поле «Место рождения» перечислены все места, в которых родились те говорящие, с которыми записаны тексты Корпуса."
+msgstr "The search parameters that are related to the speakers are displayed in fall-out menus that list all the parameter values attested in the Corpus. For instances, the fall-out menu for the parameter «Place of birth» includes the birth places of all the speakers represented in the Corpus."
+
+msgid "Все остальные параметры поиска (полнотекстовый поиск, поиск предложений / слов / лексем, выбор подкорпуса, одновременное использование нескольких полей, использование поиска по нескольким словоформам и т.д.) не имеют особенностей, характерных только для башкирского Корпуса."
+msgstr "The other search options (full-text search, sentence search, word/lemmata search, subcorpus selection, search with queries in more than one field, search of more than one words, etc.) do not have features specific for the Bashkir Corpus."
+
+msgid " В корпусе содержится 92 текста общей продолжительностью чуть более 5 часов, объем корпуса около 25000 слов."
+msgstr " The corpus contains 92 texts, with overall duration of more than 5 hours and about 25 000 word tokens."
+
+msgid " Тексты корпуса были записаны от 37 носителей разных поколений, от 1928 до 2005 г.р. Распределение текстов по годам рождения носителей показано в таблице."
+msgstr " The texts of the corpus were recorded with 37 speakers of different age groups, their years of birth ranging from 1928 to 2005. The distribution of the texts according to the age group of the speaker is shown in the table."
+
+msgid " В основном в корпус входят полуспонтанные монологические тексты, незначительную долю составляют диалоги. В таблице ниже отражен жанрово-тематический состав текстов в минутах записей."
+msgstr " The corpus mainly includes semispontaneous monologic texts, with a small portion of dialogues. The table below gives an overview of the thematic composition of the corpus."
+
+msgid ". В этом гранте принимали участие:"
+msgstr ". This work was carried out by the following people:"
+
+msgid "Екатерина Сергеевна Аплонова"
+msgstr "Ekaterina Aplonova"
+
+msgid "Контакты"
+msgstr "Contacts"
+
+msgid "По содержательным вопросам:"
+msgstr "You may contact us with questions about the Corpus:"
+
+msgid "По техническим вопросам:"
+msgstr "Or with questions about the search platform:"
+
+msgid "Орфография"
+msgstr "Orthography"
+
+msgid "Комментарий"
+msgstr "Comments"
+
+msgid "Пример"
+msgstr "Example"
+
+msgid "w в исконных словах и арабских заимствованиях, v в русских заимствованиях (в соответствии с произношением)"
+msgstr "w in  original Turkic words and in Arabic loanwords; v in Russian loanwords (in accordance with pronunciation)"
+
+msgid "e в большинстве случаев; je в начале слова (также в редких случаях в русских заимствованиях после гласной)"
+msgstr "e in most cases; je at the beginning of a word (also, rarely, in Russian loanwords after vowels)"
+
+msgid "только в русских заимствованиях (y обозначается мягкость согласного)"
+msgstr "only in Russian loanwords (y signals palatalization of the preceding consonant)"
+
+msgid "или"
+msgstr "or"
+
+msgid "w после гласных, u в остальных случаях"
+msgstr "w after vowels, u otherwise"
+
+msgid "w после гласных, ü в остальных случаях"
+msgstr "w after vowels, ü otherwise"
+
+msgid "в русских заимствованиях"
+msgstr "in Russian loanwords"
+
+msgid "имеет разделительную функцию"
+msgstr "functions as a separative symbol"
+
+msgid "NB: не путать с буквой башкирского алфавита (ә)"
+msgstr "NB: should not be confused with the letter in the Bashkir alphabet (ә)"
+
+msgid "ʔ в башкирских словах, где ь обозначает гортанную смычку; y в русских заимствованиях, где ь обозначает мягкость предшествующего согласного"
+msgstr "ʔ in Bashkir words (Arabic loanwords), where ь signal a glottal stop; y in Russian loanwords, where ь signals palatalization of the preceding consonant"
+
+msgid "только в начале слова"
+msgstr "only at the beginning of the word"
+
+msgid "ju или jü в соответствии с произношением (слова переднего или заднего ряда сингармонизма); теоретически должно быть yu в тех русских заимствованиях, где ю обозначает мягкость предшествующего согласных (в текстах не зафиксировано)"
+msgstr "either ju or jü, according to the pronunciation (harmonic type of the word: front vs. back); theoretically it can be also yu in Russian loanwords where ю signals palatalization of the preceding consonant (no actual examples in the corpus)"
+
+msgid "обычно ja; ya только в тех русских заимствованиях, где я обозначает мягкость предшествующего согласного"
+msgstr "ja by default; ya in Russian loanwords where я signals palatalization of the preceding consonant"
+
+msgid "В этом разделе описываются инструкции по поиску в Устном корпусе башкирского языка дер. Рахметово и с. Баимово (далее Корпус). Этот Корпус относится к группе корпусов, использующих поисковую платформу"
+msgstr "This section contains instructions concerning the use of search options in the Oral corpus of Bashkir spoken in Rakhmetovo and Baimovo (henceforth, Corpus). This corpus belongs to a group of corpora that are built on the search platform"
+
+msgid "На основной странице поиска появляется форма с полями"
+msgstr "The main search page contains a form with field marked as"
+
+msgid "Слово"
+msgstr "Word"
+
+msgid "Лемма"
+msgstr "Lemma"
+
+msgid "Грамматика"
+msgstr "Grammar"
+
+msgid "Глоссы"
+msgstr "Gloss"
+
+msgid "Поиск точных форм («Слово»)"
+msgstr "Searching for specific word forms («Word»)"
+
+msgid "В этом поле можно ввести словоформы, вхождения которых вы хотите найти. Следует помнить, что башкирские тексты записаны в корпусе в"
+msgstr "Searching for specific word forms («Word»)In this field, you can enter specific word forms that you want to find. It is important to remember that Bashkir texts are written using a specially developed"
+
+msgid "транслитерации"
+msgstr "transliteration system"
+
+msgid "Запись в корпусе"
+msgstr "The form as written in the Corpus"
+
+msgid "Орфографическая запись"
+msgstr "Orthography"
+
+msgid "Запись с разбиением на морфемы"
+msgstr "The form in the Corpus with morpheme boundaries"
+
+msgid "Глоссы"
+msgstr "Glosses"
+
+msgid "Перевод"
+msgstr "Translation"
+
+msgid "Поиск лексем («Лемма»)"
+msgstr "Searching for specific lemmas («Lemma»)"
+
+msgid "В Корпусе не проводится различие между словоизменением и словообразованием. В частности, формы, построенные по регулярным словообразовательным моделям, воспринимаются Корпусом как формы производящих лемм. Например, глагол, который в словарях трактуется как лексема eserew ‘поить’, для Корпуса является формой каузатива от глагола esew ‘пить’. Как следствие, по запросу eserew в поле «Лемма» Корпус не выдаст результатов, а по запросу esew будут показаны как формы без показателя каузатива (например, esä ‘пьет’), так и формы с показателем каузатива (например, eserergä ‘чтобы напоить’ и т.д.). Чтобы получить только каузативные формы, можно сузить запрос, воспользовавшись полями"
+msgstr "The Corpus does not distinguish between inflection and word formation. In particular, forms that are derived through productive and regular derivational process are analyzed as if they were forms of the corresponding non-derived lemmas. For example, all inflectional forms of the verb that is treated in dictionaries as a separate lemma (lexeme) eserew ‘water, give to drink’ is analyzed in the Сorpus as causative forms of the non-derived verb esew ‘to drink’. As a consequence, a search query with “eserew” in the “Lemma” field yield zero hits. By contrast, if you enter “esew” in this field, the search results will contain both non-causative forms (such as, e.g., esä ‘drinks’) and forms that contain the causative suffix (e.g., eserergä ‘in order to water / give to drink’, etc.). In order to obtain hits with causative forms only, the search query should be narrowed down: you can do that by usingSearching for specific lemmas («Lemma»)"
+
+msgid "Аналогичные решения приняты и для многих других словообразовательных процессов (см. раздел"
+msgstr "Parallel analytical decisions have been implemented for many other regular derivational processes as well (cf. "
+
+msgid "Условное обозначение"
+msgstr "Tag"
+
+msgid "Расшифровка"
+msgstr "Meaning"
+
+msgid "существительное"
+msgstr "noun"
+
+msgid "глагол"
+msgstr "verb"
+
+msgid "прилагательное"
+msgstr "adjective"
+
+msgid "наречие"
+msgstr "adverb"
+
+msgid "числительное"
+msgstr "numeral"
+
+msgid "местоимение"
+msgstr "pronoun"
+
+msgid "послелог"
+msgstr "postposition"
+
+msgid "союз"
+msgstr "conjunction"
+
+msgid "частица"
+msgstr "particle"
+
+msgid "междометие"
+msgstr "interjection"
+
+msgid "другое и неклассифицируемое"
+msgstr "other and unclassified"
+
+msgid "Основной (-ые) алломорф(ы)"
+msgstr "Basic allomorph(s)"
+
+msgid "Примеры и комментарии"
+msgstr "Examples and comments"
+
+msgid "Число"
+msgstr "Number"
+
+msgid "множественное число"
+msgstr "plural"
+
+msgid "Падеж"
+msgstr "Case"
+
+msgid "начальная форма (имени)"
+msgstr "basic form of nouns"
+
+msgid "Иллокутивные маркеры"
+msgstr "Illocutive markers"
+
+msgid "личная форма 1л.мн.ч."
+msgstr "1st person plural predicative marker"
+
+msgid "Глагольная деривация"
+msgstr "Verbal derivation"
+
+msgid "приблизительное количество"
+msgstr "approximative"
+
+msgid "Примеры"
+msgstr "Examples"
+
+msgid "родительный"
+msgstr "genitive"
+
+msgid "отрицательная деепричастная форма"
+msgstr "negative form of converb"
+
+msgid "Притяжательность"
+msgstr "Possession"
+
+msgid "сравнительная степень"
+msgstr "comparative"
+
+msgid "Наклонение"
+msgstr "Mood"
+
+msgid "эмфатический императив"
+msgstr "emphatic imperative"
+
+msgid "причастие будущего времени"
+msgstr "future participle"
+
+msgid "имперфектив"
+msgstr "imperfective"
+
+msgid "безвершинный генитив"
+msgstr "substantivizer of possessor"
+
+msgid "плюсквамперфект"
+msgstr "pluperfect"
+
+msgid "отрицание"
+msgstr "negation"
+
+msgid "прошедшее"
+msgstr "past"
+
+msgid "условное наклонение"
+msgstr "conditional"
+
+msgid "реципрок"
+msgstr "reciprocal"
+
+msgid "винительный"
+msgstr "accusative"
+
+msgid "императив"
+msgstr "imperative"
+
+msgid "адъективатор"
+msgstr "adjectivizer"
+
+msgid "посессор 2л. ед.ч."
+msgstr "2nd person singular possessor"
+
+msgid "Деривация числительных"
+msgstr "Numeral derivation"
+
+msgid "дистрибутив"
+msgstr "distributive"
+
+msgid "номинализация"
+msgstr "nominalization"
+
+msgid "интенсивность"
+msgstr "intensive"
+
+msgid "каритив"
+msgstr "caritive"
+
+msgid "безвершинное числительное"
+msgstr "numeral substantivizer"
+
+msgid "Деривация существительных"
+msgstr "Nominal derivation"
+
+msgid "имя деятеля"
+msgstr "agent nominalization"
+
+msgid "Время и финитность"
+msgstr "Tense and finiteness"
+
+msgid "посессор 1л. мн.ч."
+msgstr "1st person plural possessor"
+
+msgid "посессор 1л. ед.ч."
+msgstr "1st person singular possessor"
+
+msgid "будущее"
+msgstr "future tense"
+
+msgid "дезидератив"
+msgstr "desiderative"
+
+msgid "посессор 3л."
+msgstr "3rd person possessor"
+
+msgid "личная форма 1л.ед.ч."
+msgstr "1st person singular predicative marker"
+
+msgid "пассив"
+msgstr "passive"
+
+msgid "рефлексив"
+msgstr "reflexive"
+
+msgid "адвербиализатор"
+msgstr "adverbializer"
+
+msgid "дательный"
+msgstr "dative"
+
+msgid "отрицательная форма потенциалиса"
+msgstr "negative form of the potential"
+
+msgid "личная форма 2л.ед.ч."
+msgstr "2nd person singular predicative marker"
+
+msgid "каузатив"
+msgstr "causative"
+
+msgid "юссив"
+msgstr "jussive"
+
+msgid "частица неопределенности"
+msgstr "particle of uncertainty"
+
+msgid "личная форма 2л.мн.ч."
+msgstr "2nd person plural predicative marker"
+
+msgid "порядковое числительное"
+msgstr "ordinal numeral"
+
+msgid "деепричастие предшествования"
+msgstr "anterior converb"
+
+msgid "посессор 2л. мн.ч."
+msgstr "2nd person plural possessor"
+
+msgid "причастие прошедшего времени"
+msgstr "past participle"
+
+msgid "вопросительная частица"
+msgstr "question marker"
+
+msgid "частичная редупликация"
+msgstr "partial reduplication"
+
+msgid "Основные алломорфы"
+msgstr "Basic allomorph(s)"
+
+msgid "местный"
+msgstr "lock"
+
+msgid "приблизительность"
+msgstr "similative"
+
+msgid "Личные предикативные показатели"
+msgstr "Person predicative markers"
+
+msgid "собирательность"
+msgstr "collective"
+
+msgid "основное деепричастие"
+msgstr "general converb"
+
+msgid "Отрицание"
+msgstr "Negation"
+
+msgid "потенциалис"
+msgstr "potential"
+
+msgid "Деривация прилагательных и наречий"
+msgstr "Adjective derivation"
+
+msgid "гортатив"
+msgstr "hortative"
+
+msgid "предельное деепричастие"
+msgstr "terminative converb"
+
+msgid "исходный"
+msgstr "ablative"
+
+msgid "глоссам"
+msgstr "Gloss"
+
+msgid "Для того чтобы найти словоформы с этим аффиксами, можно воспользоваться поискам по"
+msgstr "In order to search for word forms with these affixes, you can use searches based on the field"
+
+msgid "Дополнительные возможности поиска"
+msgstr "Extended search options"
+
+msgid "Общие сведения"
+msgstr "General facts"
+
+msgid "Социолингвистические характеристики"
+msgstr "Sociolinguistic characteristics of the speakers"
+
+msgid "Год рождения"
+msgstr "Year of birth"
+
+msgid "Количество носителей"
+msgstr "Number of speakers"
+
+msgid "Продолжительность текстов"
+msgstr "Duration (min)"
+
+msgid "Жанровый состав"
+msgstr "Thematic composition"
+
+msgid "Описания ритуалов, рецепты, инструкции"
+msgstr "Rituals, recipes, instructions"
+
+msgid "Жанр"
+msgstr "Thematic group"
+
+msgid "Легенды и сказки"
+msgstr "Legends and tales"
+
+msgid "Пересказы фильмов"
+msgstr "Film summaries"
+
+msgid "(Авто)биографии"
+msgstr "(Auto)biographies"
+
+msgid "Истории из жизни"
+msgstr "Life stories"
+
+msgid "Размышления и другие ненарративные монологи"
+msgstr "Reflections and other non-sequential monologues"
+
+msgid "Диалоги"
+msgstr "Dialogues"
+
+msgid "Тексты были подготовлены к публикации в виде корпуса в 2017 г. при поддержке гранта"
+msgstr "The processing of the texts for inclusion in the corpus was conducted in 2017 with the support of the"
+
+msgid "Международной лаборатории языковой конвергенции"
+msgstr "Linguistic Convergence Laboratory"
+
+msgid "НИУ ВШЭ"
+msgstr "of the National Research University Higher School of Economics"
+
+msgid "Мария Александровна Овсянникова"
+msgstr "Maria Ovsjannikova"
+
+msgid "Сергей Сергеевич Сай"
+msgstr "Sergey Say"
+
+msgid "Анна Сергеевна Сметина"
+msgstr "Anna Smetina"
+
+msgid "Значительная часть текстов, вошедших в корпус, были записаны и расшифрованы в 2011–2016 гг. участниками экспедиций в дер. Рахметово и с. Баимово. Эти экспедиции были организованы сотрудниками кафедры общего языкознания СПбГУ и Института лингвистических исследований РАН при поддержке Института истории, языка и литературы Уфимского научного центра РАН. Вклад в пополнение и обработку текстов корпуса внесли следующие участники экспедиций: М. А. Овсянникова, С. С. Сай, Е. С. Аплонова, А. С. Сметина, С. А. Оскольская, В. А. Генералова, А. В. Выдрина, Е. Н. Сергеева, Д. Ф. Мищенко, О. В. Кузнецова, А. А. Горлова, М. Л. Федотов, Е. В. Перехвальская, М. Д. Балтайс, Е. А. Ромицына, С. А. Павлова, К. А. Байда (Иванова), Р. В. Ронько, А. М. Севастьянова (Шестакова), М. А. Горшкова, И. К. Учитель, Е. В. Востокова."
+msgstr "A large part of the texts included in the corpus were recorded and transcribed in 2011–2016 during fieldwork. These fieldtrips were organized by the members of the Department of General Linguistics, St. Petersburg State University and researchers of the Institute for Linguistic Studies of the Russian Academy of Sciences, with the support of the Institute of History, Language and Literature of the Ufa Research Centre of the Russian Academy of Sciences. The recording and transcription of the texts was carried out by the following fieldtrip participants: Maria Ovsjannikova, Sergey Say, Ekaterina Aplonova, Anna Smetina, Sofia Oskolskaya, Valeria Generalova, Aleksandra Vydrina, Ekaterina Sergeeva, Daria Mishchenko, Olga Kuznecova, Anastasia Gorlova, Maksim Fedotov, Elena Perekhvalskaya, Maria Baltays, Ekaterina Romicyna, Svetlana Pavlova, Kira Bayda (Ivanova), Roman Ronko, Anna Sevastjanova (Shestakova), Maria Gorshkova, Ilya Uchitel, Elizaveta Vostokova."
+
+msgid "Елена Олеговна Сокур"
+msgstr "Elena Sokur"
