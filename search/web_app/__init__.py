@@ -1664,7 +1664,14 @@ def set_locale(lang=''):
     if lang not in settings['interface_languages']:
         return
     set_session_data('locale', lang)
-    return redirect("/")
+    return ""
+
+@app.route('/set_locale_start/<lang>')
+def set_locale_start(lang=''):
+    if lang not in settings['interface_languages']:
+        return
+    set_session_data('locale', lang)
+    return redirect("linghub.ru/oral_bashkir_corpus/")
 
 
 @app.route('/help_dialogue')
