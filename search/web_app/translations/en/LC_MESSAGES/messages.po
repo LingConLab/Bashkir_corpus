@@ -1547,7 +1547,7 @@ msgid "Орфографическая запись"
 msgstr "Orthography"
 
 msgid "Запись с разбиением на морфемы"
-msgstr "The form in the Corpus with morpheme boundaries"
+msgstr "The form with morpheme boundaries"
 
 msgid "Глоссы"
 msgstr "Glosses"
