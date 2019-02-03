@@ -1,6 +1,7 @@
 eaf/
 eaf_to_process/
 search/media/
+make_meta.py
 corpus/
 *.pyc
 search/tmp/

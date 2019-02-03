@@ -74,6 +74,9 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contacts">{{ _('Контакты') }}</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#cite">{{ _('Как процитировать корпус') }}</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -708,6 +711,31 @@
 
           <p class="lead">{{ _('По техническим вопросам:') }}<br>
           <a href="https://www.hse.ru/org/persons/160997992" target="_blank">{{ _('Елена Олеговна Сокур') }}</a>: elena.o.sokur@gmail.com</p>
+        </div>
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="cite">
+        <div class="my-auto">
+          <h3 class="mb-3">{{ _('Как процитировать корпус') }}</h3>
+          <p class="lead">{{ _('Если Вы используете данные Корпуса в своём исследовании, воспользуйтесь следующей ссылкой:') }}<br>
+        <div class="panel panel-default">
+          <div class="panel-body">{{ _('Мария Овсянникова, Сергей Сай, Екатерина Аплонова, Анна Сметина, Елена Сокур. Устный корпус башкирского языка дер. Рахметова и с. Баимово. СПб.: ИЛИ РАН; М.: Международная лаборатория языковой конвергенции, НИУ ВШЭ. (Доступно онлайн по адресу: https://linghub.ru/oral_bashkir_corpus/, дата обращения') }} <c id="dateFolder"></c>.)</div>
+            <script language="JavaScript">
+            temp_date = new Date();
+            day = temp_date.getDate();
+            month = temp_date.getMonth() + 1;
+            year = temp_date.getFullYear();
+            if (day < 10) {
+            day = "0" + day;
+            }
+            if (month <10) {
+            month = "0" + month;
+            }
+            document.getElementById('dateFolder').innerHTML = day + "." + month + "." + year;
+            </script>
+          </div>
         </div>
       </section>
 

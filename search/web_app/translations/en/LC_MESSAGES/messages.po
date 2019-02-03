@@ -1893,3 +1893,12 @@ msgstr "A large part of the texts included in the corpus were recorded and trans
 
 msgid "Елена Олеговна Сокур"
 msgstr "Elena Sokur"
+
+msgid "Как процитировать корпус"
+msgstr "How to cite the corpus"
+
+msgid "Если Вы используете данные Корпуса в своём исследовании, воспользуйтесь следующей ссылкой:"
+msgstr "If you use data from the Oral corpus of Bashkir spoken in Rakhmetovo and Baimovo in your research, please cite as follows:"
+
+msgid "Мария Овсянникова, Сергей Сай, Екатерина Аплонова, Анна Сметина, Елена Сокур. Устный корпус башкирского языка дер. Рахметова и с. Баимово. СПб.: ИЛИ РАН; М.: Международная лаборатория языковой конвергенции, НИУ ВШЭ. (Доступно онлайн по адресу: https://linghub.ru/oral_bashkir_corpus/, дата обращения"
+msgstr "Maria Ovsjannikova, Sergey Say, Ekaterina Aplonova, Anna Smetina, Elena Sokur. Oral corpus of Bashkir spoken in Rakhmetovo and Baimovo. St. Petersburg: Institute for linguistic studies; Moscow: Linguistic Convergence Laboratory, NRU HSE. (Available online at https://linghub.ru/oral_bashkir_corpus/, accessed on"
