@@ -131,8 +131,8 @@ var nothingFoundCaption = "{{ _('Nothing found.') }}";
 						</div>
 						<div class="options_column">
 						{{ _('Viewing mode:') }} <select name="viewing_mode" id="viewing_mode" class="search_input">
-							<option value="standard">{{ _('view_standard') }}</option>
 							<option value="glossed">{{ _('view_glossed') }}</option>
+							<option value="standard">{{ _('view_standard') }}</option>
 						</select><br>
 						{% if transliterations and transliterations|length > 1 %}
 							{{ _('Transliteration: ') }}<select name="translit" id="translit" class="search_input">
@@ -152,11 +152,11 @@ var nothingFoundCaption = "{{ _('Nothing found.') }}";
 						<div class="options_column_leftalign">
 						{{ _('Annotation layers in glossed mode:') }}<br>
 						<input type="checkbox" name="toggle_lemma" data="lex" class="toggle_glossed_layer" id="toggle_lemma" checked> {{ _('Lemma') }}<br>
-						<input type="checkbox" name="toggle_grammar" data="gramm" class="toggle_glossed_layer" id="toggle_grammar" checked> {{ _('Grammar') }}<br>
+						<input type="checkbox" name="toggle_grammar" data="gramm" class="toggle_glossed_layer" id="toggle_grammar"> {{ _('Grammar') }}<br>
 {% if gloss_search_enabled %}
 						<input type="checkbox" name="toggle_gloss" data="gloss" class="toggle_glossed_layer" id="toggle_gloss" checked> {{ _('Gloss') }}<br>
 {% endif %}
-						<input type="checkbox" name="toggle_additional_ana_fields" data="field_ana_other" class="toggle_glossed_layer" id="toggle_additional_ana_fields" checked> {{ _('Additional fields') }}<br>
+						<input type="checkbox" name="toggle_additional_ana_fields" data="field_ana_other" class="toggle_glossed_layer" id="toggle_additional_ana_fields"> {{ _('Additional fields') }}<br>
 						</div>
 					</div>
 				</div>
