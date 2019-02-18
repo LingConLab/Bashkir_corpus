@@ -1905,3 +1905,9 @@ msgstr "Maria Ovsjannikova, Sergey Say, Ekaterina Aplonova, Anna Smetina, Elena 
 
 msgid "и"
 msgstr "and"
+
+msgid "Помощь в расшифровке текстов оказали жители дер. Рахметово и с. Баимово, прежде всего Г. Р. Гирфанова, Р. С. Магасумова, М. Ф. Сафиуллина, З. Х. Валиева, М. Т. Сунагатова, Р. Р. Гирфанова, Д. Ф. Ахметова, И. М. Галимова, И. М. Галимова, М. М. Ахмадеева, Р. Х. Ахмадеева, Н. К. Гайсина."
+msgstr "The kind people of the villages of Rakhmetovo and Baimovo helped transcribe the texts of the Corpus, in particular Gulsina Girfanova, Railya Magasumova, Mavliya Safiullina, Zakiya Valieva, Mavlida Sunagatova, Ragida Girfanova, Dinara Akhmetova, Ilyuza Galimova, Idiya Galimova, Minnura Akhmadeeva, Roza Akhmadeeva, Nakiya Gaysina."
+
+msgid "Создание Корпуса было бы невозможным без участия сотрудников Отдела языкознания Института истории, языка и литературы Уфимского центра РАН, прежде всего Ф. Г. Хисамитдиновой, Р. А. Сулеймановой, Р. Т. Муратовой, Л. К. Ишкильдиной, Г. Р. Каримовой и Р. Н. Каримовой, которые оказывали постоянную организационную поддержку участникам экспедиций, помогали им в расшифровке текстов и консультировали по вопросам башкирской грамматики и диалектологии."
+msgstr "The researchers at the Linguistics Department of the Institute of History, Language and Literature of the Ufa Research Centre of the Russian Academy of Sciences, in particular Firdaus Khisamitdinova, Rezeda Suleymanova, Rimma Muratova, Linara Ishkildina, Gulnaz Karimova and Ramilya Karimova, helped in the transcription of the texts, shared their knowledge of the Bashkir grammar and dialectology and provided constant support in the organization of the fieldtrips."
