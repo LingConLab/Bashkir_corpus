@@ -21,7 +21,7 @@ msgstr ""
 # ********  Please fill in the following strings:  ********
 
 msgid "corpus_title"
-msgstr "Oral corpus of Bashkir spoken in Rakhmetovo and Baimovo"
+msgstr "Spoken corpus of Bashkir (Rakhmetovo and Baimovo)"
 
 # Language names for the dropdown menu in search panel (please add all missing languages that you have in the corpus):
 
@@ -1031,10 +1031,10 @@ msgid "Создатели"
 msgstr "Project participants"
 
 msgid "Устный корпус башкирского языка"
-msgstr "Oral corpus of Bashkir"
+msgstr "Spoken corpus of Bashkir"
 
 msgid "дер. Рахметово и с. Баимово"
-msgstr "spoken in Rakhmetovo and Baimovo"
+msgstr "(Rakhmetovo and Baimovo)"
 
 msgid "Корпус содержит устные тексты на башкирском языке. Тексты были записаны в 2011–2017 гг. в дер. Рахметово и с. Баимово Абзелиловского р-на респ. Башкортостан. Эти населенные пункты относятся к зоне распространения кубалякского говора башкирского языка, принадлежащего к юго-восточной группе восточных говоров башкирского языка (с некоторыми чертами южных говоров). В целом тексты корпуса близки к литературному башкирскому языку, но имеют некоторые диалектные черты на уровне фонетики и морфонологии."
 msgstr "The corpus contains oral texts in Bashkir recorded in 2011–2017 in the villages of Rakhmetovo and Baimovo of the Abzelilovsky district in the Republic of Bashkortostan. These villages are located in the Kubelyak dialect zone. The Kubelyak dialect belongs to the Southeastern subbranch of the Eastern dialect of Bashkir (with some traits of the Southern dialect). The texts of the corpus are close to standard Bashkir, although they manifest some phonetic and morphophonological dialectal features."
@@ -1043,7 +1043,7 @@ msgid "К поиску"
 msgstr "Search"
 
 msgid "Тексты Устного корпуса башкирского языка записаны расширенной латиницей. Используемая система сочетает черты транслитерации (то есть ориентирована на башкирскую кириллическую орфографию) и транскрипции. Соответствия между башкирской орфографией и используемой системой записи представлены в таблице."
-msgstr "The texts in the Oral corpus of Bashkir spoken in Rakhmetovo and Baimovo are written in the Latin script with some extensions, unlike standard Bashkir orthography, which is based on the Cyrillic script. The system employed is mainly a transliteration of the standard Bashkir orthography, but it has some features of a phonological transcription. Correspondences between standard orthography and the transliteration system employed here are shown in the table."
+msgstr "The texts in the Spoken corpus of Bashkir (Rakhmetovo and Baimovo) are written in the Latin script with some extensions, unlike standard Bashkir orthography, which is based on the Cyrillic script. The system employed is mainly a transliteration of the standard Bashkir orthography, but it has some features of a phonological transcription. Correspondences between standard orthography and the transliteration system employed here are shown in the table."
 
 msgid "ағас = aɣas ‘дерево’"
 msgstr "ағас = aɣas ‘tree’"
@@ -1514,7 +1514,7 @@ msgid "обычно ja; ya только в тех русских заимств�
 msgstr "ja by default; ya in Russian loanwords where я signals palatalization of the preceding consonant"
 
 msgid "В этом разделе описываются инструкции по поиску в Устном корпусе башкирского языка дер. Рахметово и с. Баимово (далее Корпус). Этот Корпус относится к группе корпусов, использующих поисковую платформу"
-msgstr "This section contains instructions on how to use the Oral corpus of Bashkir spoken in Rakhmetovo and Baimovo (henceforth, Corpus). This corpus belongs to a group of corpora that are built on the search platform"
+msgstr "This section contains instructions on how to use the Spoken corpus of Bashkir (Rakhmetovo and Baimovo) (henceforth, Corpus). This corpus belongs to a group of corpora that are built on the search platform"
 
 msgid "На основной странице поиска появляется форма с полями"
 msgstr "The main search page contains a form with fields marked as"
@@ -1870,14 +1870,32 @@ msgstr "Reflections and other non-sequential monologues"
 msgid "Диалоги"
 msgstr "Dialogues"
 
-msgid "Тексты были подготовлены к публикации в виде корпуса в 2017 г. при поддержке гранта"
-msgstr "The processing of the texts for inclusion in the corpus was conducted in 2017 with the support of the"
+msgid "Другие корпуса"
+msgstr "Other corpora"
 
-msgid "Международной лаборатории языковой конвергенции"
+msgid "Национальный корпус башкирского языка"
+msgstr "Bashkir National Corpus"
+
+msgid "Башкирский поэтический корпус"
+msgstr "Bashkir Poetic Corpus"
+
+msgid "Каталог языковых ресурсов башкирского языка"
+msgstr "Catalog of language resources of Bashkir"
+
+msgid "Тексты были подготовлены к публикации в виде корпуса в 2017 г. В этом гранте принимали участие:"
+msgstr "The processing of the texts for inclusion in the corpus was conducted in 2017. This work was carried out by the following people:"
+
+msgid "Проект Устного корпуса башкирского языка дер. Рахметово и с. Баимово поддерживается"
+msgstr "The Spoken corpus of Bashkir (Rakhmetovo and Baimovo) is a project supported by the"
+
+msgid "Международной лабораторией языковой конвергенции"
 msgstr "Linguistic Convergence Laboratory"
 
-msgid "НИУ ВШЭ"
+msgid "Высшей Школы Экономики"
 msgstr "of the National Research University Higher School of Economics"
+
+msgid ". Корпус создан в рамках Программы фундаментальных исследований Национального исследовательского университета «Высшая школа экономики» (НИУ ВШЭ) и с использованием средств субсидии в рамках государственной поддержки ведущих университетов Российской Федерации «5-100»."
+msgstr ". It is conducted within the framework of the Basic Research Program at the National Research University 'Higher School of Economics' (HSE) and supported as part of the Russian Academic Excellence Project '5-100'."
 
 msgid "Мария Александровна Овсянникова"
 msgstr "Maria Ovsjannikova"
@@ -1898,10 +1916,10 @@ msgid "Как процитировать корпус"
 msgstr "How to cite the corpus"
 
 msgid "Если Вы используете данные Корпуса в своём исследовании, воспользуйтесь следующей ссылкой:"
-msgstr "If you use data from the Oral corpus of Bashkir spoken in Rakhmetovo and Baimovo in your research, please cite as follows:"
+msgstr "If you use data from the Spoken corpus of Bashkir (Rakhmetovo and Baimovo) in your research, please cite as follows:"
 
 msgid "Мария Овсянникова, Сергей Сай, Екатерина Аплонова, Анна Сметина, Елена Сокур. Устный корпус башкирского языка дер. Рахметова и с. Баимово. СПб.: ИЛИ РАН; М.: Международная лаборатория языковой конвергенции, НИУ ВШЭ. (Доступно онлайн по адресу: https://linghub.ru/oral_bashkir_corpus/, дата обращения"
-msgstr "Maria Ovsjannikova, Sergey Say, Ekaterina Aplonova, Anna Smetina, Elena Sokur. Oral corpus of Bashkir spoken in Rakhmetovo and Baimovo. St. Petersburg: Institute for linguistic studies; Moscow: Linguistic Convergence Laboratory, NRU HSE. (Available online at https://linghub.ru/oral_bashkir_corpus/, accessed on"
+msgstr "Maria Ovsjannikova, Sergey Say, Ekaterina Aplonova, Anna Smetina, Elena Sokur. Spoken corpus of Bashkir (Rakhmetovo and Baimovo). St. Petersburg: Institute for linguistic studies; Moscow: Linguistic Convergence Laboratory, NRU HSE. (Available online at https://linghub.ru/oral_bashkir_corpus/, accessed on"
 
 msgid "и"
 msgstr "and"
