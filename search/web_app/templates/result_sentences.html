@@ -1,8 +1,14 @@
-﻿<style type="text/css">
-title {
-	color: green;
-}
-</style>
+﻿<script>
+	function copy_message(indx){
+		elem = document.getElementById('copy_gloss' + indx);
+		coords = elem.getBoundingClientRect();
+		var top = coords.top - 150;
+		var left = coords.left - 23;
+		$('#copied_message').css({'margin-top': top, 'margin-left': left});
+		$('#copied_message').show();
+		setTimeout(function(){ $('#copied_message').fadeOut();}, 1200);
+	}
+</script>
 
 
 {% if data.timeout %}
@@ -17,14 +23,16 @@ title {
 {% endif %}
 {{ data.n_sentences }} {{ _('sentence(s) found in approximately') }} {{ data.n_docs }} {{ _('document(s)') }}.</p>
 
-<div class="sent_results">
+<div id="copied_message" style="position: absolute !important; z-index: 300000000; background-color: #2e74b3; display: none; color: #FFFFFF; border-radius: 3px; font-family: Circe Rounded; font-size: 16px; width: 70px; height: 30px; text-align: center; line-height: 28px; vertical-align: middle;">Copied!</div>
+
+<div class="sent_results" id="ddd">
 {% for c in data.contexts %}
 	{% set context_loop = loop %}
 	<div class="context {% if not c.toggled_on %} context_off{% endif %}" id='div_res{{ loop.index - 1 }}'>
 	<span class="ch_container">{{ c.header | safe }}</span>
 	<div class="cx_main">
 	<div class="cx_toggle_div"><input type="checkbox" class="cx_toggle_chk" {% if c.toggled_on %} checked{% endif %}></div>
-	<span class="get_glossed_copy" data-nsent="{{ loop.index - 1 }}" title="Copy to clipboard" onmouseenter="" onclick="this.setAttribute('title', 'Copied!');" onmouseout=""><span class="glyph_copy glyphicon glyphicon-copy" aria-hidden="true"></span></span>
+	<span class="get_glossed_copy" id='copy_gloss{{ loop.index - 1 }}' data-nsent="{{ loop.index - 1 }}" title="Copy to clipboard" onclick="copy_message('{{ loop.index - 1 }}');"><span class="glyph_copy glyphicon glyphicon-copy" aria-hidden="true"></span></span>
 	<span class="sentence" id='res{{ loop.index - 1 }}'>
 	{% for lang in data.languages %}
 		{% if lang in c.languages %}
