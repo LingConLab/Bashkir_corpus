@@ -129,7 +129,7 @@ def initialize_session():
     """
     global sessionData
     session['session_id'] = str(uuid.uuid4())
-    sessionData[session['session_id']] = {'page_size': 10,
+    sessionData[session['session_id']] = {'page_size': 100,
                                           'page': 1,
                                           'login': False,
                                           'locale': 'ru',
@@ -159,7 +159,7 @@ def get_session_data(fieldName):
     elif fieldName == 'locale' and fieldName not in sessionData[session['session_id']]:
         sessionData[session['session_id']]['locale'] = 'ru'
     elif fieldName == 'page_size' and fieldName not in sessionData[session['session_id']]:
-        sessionData[session['session_id']]['page_size'] = 10
+        sessionData[session['session_id']]['page_size'] = 100
     elif fieldName == 'last_sent_num' and fieldName not in sessionData[session['session_id']]:
         sessionData[session['session_id']]['last_sent_num'] = -1
     elif fieldName == 'seed' and fieldName not in sessionData[session['session_id']]:
@@ -219,7 +219,7 @@ def change_display_options(query):
                 ps = 1
             set_session_data('page_size', ps)
         except:
-            set_session_data('page_size', 10)
+            set_session_data('page_size', 100)
     if 'sort' in query:
         set_session_data('sort', query['sort'])
     if 'distance_strict' in query:
@@ -288,6 +288,7 @@ def add_sent_data_for_session(sent, sentData):
             for alignment in sent['_source']['src_alignment']:
                 if alignment['src'] not in sentData['src_alignment_files']:
                     sentData['src_alignment_files'].append(alignment['src'])
+        # print(sent)
 
 
 def add_sent_to_session(hits):
@@ -1535,8 +1536,17 @@ def download_cur_results_csv():
     pageData = get_session_data('page_data')
     if pageData is None or len(pageData) <= 0:
         return ''
-    result = prepare_results_for_download(pageData)
-    return '\n'.join(['\t'.join(s) for s in result if len(s) > 0])
+    results = prepare_results_for_download(pageData)
+    for result in results:
+        if len(result) > 2:
+            bash = result[1].split('\t')
+            rus = result[2]
+            result.pop()
+            result.pop()
+            for elem in bash:
+                result.append(elem)
+            result.append(rus)
+    return '\n'.join(['\t'.join(s) for s in results if len(s) > 0])
 
 
 @app.route('/download_cur_results_xlsx')
@@ -1550,6 +1560,15 @@ def download_cur_results_xlsx():
     if pageData is None or len(pageData) <= 0:
         return ''
     results = prepare_results_for_download(pageData)
+    for result in results:
+        if len(result) > 2:
+            bash = result[1].split('\t')
+            rus = result[2]
+            result.pop()
+            result.pop()
+            for elem in bash:
+                result.append(elem)
+            result.append(rus)
     XLSXFilename = 'results-' + str(uuid.uuid4()) + '.xlsx'
     workbook = xlsxwriter.Workbook('tmp/' + XLSXFilename)
     worksheet = workbook.add_worksheet('Search results')

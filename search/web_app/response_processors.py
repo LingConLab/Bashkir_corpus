@@ -534,6 +534,7 @@ class SentenceViewer:
                 or 'text' not in sDict['languages'][lang]
                 or len(sDict['languages'][lang]['text']) <= 0):
             return ''
+        # print(sDict['languages'][/lang]['text'])
         return sDict['languages'][lang]['text']
 
     def transliterate_baseline(self, text, lang, translit=None):
@@ -587,6 +588,7 @@ class SentenceViewer:
         Return dictionary {'header': document header HTML,
                            {'languages': {'<language_name>': {'text': sentence HTML}}}}.
         """
+        # print(s)
         if len(langView) <= 0 and len(lang) > 0:
             langView = lang
         if '_source' not in s:
@@ -611,6 +613,7 @@ class SentenceViewer:
         if 'words' not in sSource:
             return {'languages': {langView: {'text': highlightedText,
                                              'highlighted_text': highlightedText}}}
+        
         chars = list(sSource['text'])
         if format == 'csv':
             offParaStarts, offParaEnds = {}, {}
@@ -702,8 +705,43 @@ class SentenceViewer:
         relationsSatisfied = True
         if 'toggled_on' in s and not s['toggled_on']:
             relationsSatisfied = False
-        text = self.view_sentence_meta(sSource, format) +\
-               self.transliterate_baseline(''.join(chars), lang=lang, translit=translit)
+        if format == 'csv':
+            if lang == 'bashkir':
+                text = self.view_sentence_meta(sSource, format) + '\t' + \
+                       self.transliterate_baseline(''.join(chars), lang=lang, translit=translit)
+            else:
+                text = self.transliterate_baseline(''.join(chars), lang=lang, translit=translit)
+        else:
+            text = self.view_sentence_meta(sSource, format) + \
+                   self.transliterate_baseline(''.join(chars), lang=lang, translit=translit)
+
+        if format == 'csv':
+            words = sSource['words']
+            anas = ''
+            anas_ru = ''
+            for word in words:
+                # print(word)
+                if 'ana' in word and word['wtype'] == 'word':
+                    gloss = ''
+                    # print(word['ana'])
+                    if len(word['ana']) > 0:
+                        if 'gloss' in word['ana'][0]:
+                            analyses = self.simplify_ana(word['ana'], [])[0]
+                            gloss += ' || '.join(ana['gloss'] for ana in analyses if 'gloss' in ana)
+                            anas += gloss
+                            anas += ' '
+                            if 'trans_en' in word['ana'][0] and 'trans_ru' in word['ana'][0]:
+                                trans_en = word['ana'][0]['trans_en']
+                                trans_ru = word['ana'][0]['trans_ru']
+                                anas_ru += gloss.replace(trans_en, trans_ru)
+                                anas_ru += ' '
+            if anas:
+                text += '\t'
+                text += anas
+            if anas_ru:
+                text += '\t'
+                text += anas_ru
+            # print(text)
         return {'header': header, 'languages': {langView: {'text': text,
                                                            'highlighted_text': highlightedText}},
                 'toggled_on': relationsSatisfied,
@@ -1002,7 +1040,7 @@ class SentenceViewer:
             wordTableValues.append('/'.join(v for v in sorted(curValues)))
         return wordTableValues
 
-    def process_words_collected_from_sentences(self, hitsProcessed, sortOrder='freq', pageSize=10):
+    def process_words_collected_from_sentences(self, hitsProcessed, sortOrder='freq', pageSize=100):
         """
         Process all words collected from the sentences with a multi-word query.
         """
