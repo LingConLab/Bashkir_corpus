@@ -25,7 +25,7 @@
 
 <div id="copied_message" style="position: absolute !important; z-index: 300000000; background-color: #2e74b3; display: none; color: #FFFFFF; border-radius: 3px; font-family: Circe Rounded; font-size: 16px; width: 70px; height: 30px; text-align: center; line-height: 28px; vertical-align: middle;">Copied!</div>
 
-<div class="sent_results" id="ddd">
+<div class="sent_results">
 {% for c in data.contexts %}
 	{% set context_loop = loop %}
 	<div class="context {% if not c.toggled_on %} context_off{% endif %}" id='div_res{{ loop.index - 1 }}'>
