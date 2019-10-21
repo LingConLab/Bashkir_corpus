@@ -719,12 +719,17 @@ class SentenceViewer:
             words = sSource['words']
             anas = ''
             anas_ru = ''
+            parts = ''
             for word in words:
                 # print(word)
                 if 'ana' in word and word['wtype'] == 'word':
                     gloss = ''
                     # print(word['ana'])
                     if len(word['ana']) > 0:
+                        if 'parts' in word['ana'][0]:
+                                part = word['ana'][0]['parts']
+                                parts += part
+                                parts += ' '
                         if 'gloss' in word['ana'][0]:
                             analyses = self.simplify_ana(word['ana'], [])[0]
                             gloss += ' || '.join(ana['gloss'] for ana in analyses if 'gloss' in ana)
@@ -735,6 +740,9 @@ class SentenceViewer:
                                 trans_ru = word['ana'][0]['trans_ru']
                                 anas_ru += gloss.replace(trans_en, trans_ru)
                                 anas_ru += ' '
+            if parts:
+                text += '\t'
+                text += parts
             if anas:
                 text += '\t'
                 text += anas
